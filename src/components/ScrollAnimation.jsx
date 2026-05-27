@@ -1,31 +1,31 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const TOTAL_FRAMES = 120;
-const FRAME_PATH = '/frames';
+const FRAME_PATH = "/frames";
 
-const formatFrame = (n) => String(n).padStart(4, '0');
+const formatFrame = (n) => String(n).padStart(4, "0");
 const frameUrl = (n) => `${FRAME_PATH}/frame_${formatFrame(n)}.webp`;
 
 const STAGES = [
   {
-    title: 'We analyze your business',
-    body: 'Deep audit of your funnel, channels, and where revenue actually comes from.',
+    title: "Business analysis",
+    body: "Deep audit of your business, channels, and all of your current digital presence.",
   },
   {
-    title: 'We design your digital presence',
-    body: 'A conversion-driven website built for speed, clarity, and trust.',
+    title: "Website optimization",
+    body: "A conversion-focused website built for speed, clarity, and trust.",
   },
   {
-    title: 'We activate marketing channels',
-    body: 'Search, local, AI platforms, and paid ads working as one system.',
+    title: "Marketing channels",
+    body: "Search, local, AI platforms, social media, and paid ads",
   },
   {
-    title: 'We integrate AI workflows',
-    body: 'Lead routing, follow-ups, content, and reporting on autopilot.',
+    title: "We integrate AI workflows",
+    body: "Project management, AI automation, content, and reporting on autopilot.",
   },
   {
-    title: 'We optimize and scale',
-    body: 'Continuous testing across creative, copy, and channels to compound results.',
+    title: "We optimize and scale",
+    body: "Continuous Social Media content creation with text, image and video to compound results.",
   },
 ];
 
@@ -55,8 +55,8 @@ export default function ScrollAnimation() {
 
     for (let i = 0; i < TOTAL_FRAMES; i++) {
       const img = new Image();
-      img.decoding = 'async';
-      img.loading = 'eager';
+      img.decoding = "async";
+      img.loading = "eager";
       img.src = frameUrl(i + 1);
       img.onload = onDone;
       img.onerror = onDone;
@@ -79,20 +79,20 @@ export default function ScrollAnimation() {
       canvas.height = window.innerHeight * dpr;
       canvas.style.width = `${window.innerWidth}px`;
       canvas.style.height = `${window.innerHeight}px`;
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       if (ctx) ctx.scale(dpr, dpr);
       drawFrame(currentFrameRef.current);
     };
 
     resize();
-    window.addEventListener('resize', resize);
-    return () => window.removeEventListener('resize', resize);
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
   }, []);
 
   const drawFrame = (frameIndex) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const img = imagesRef.current[Math.floor(frameIndex)];
@@ -136,7 +136,7 @@ export default function ScrollAnimation() {
 
       const stageIndex = Math.min(
         STAGES.length - 1,
-        Math.floor(progress * STAGES.length)
+        Math.floor(progress * STAGES.length),
       );
       setStage(stageIndex);
     };
@@ -154,11 +154,11 @@ export default function ScrollAnimation() {
     };
 
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     rafRef.current = requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(rafRef.current);
     };
   }, [loaded]);
@@ -168,7 +168,7 @@ export default function ScrollAnimation() {
       id="story"
       ref={containerRef}
       className="relative bg-black text-white"
-      style={{ height: '420vh' }}
+      style={{ height: "420vh" }}
       aria-label="How Rumeira builds your growth system"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
@@ -188,7 +188,9 @@ export default function ScrollAnimation() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex items-center gap-3 text-white/50">
               <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-[#E0C67B]"></span>
-              <span className="text-sm tracking-widest uppercase">Loading sequence</span>
+              <span className="text-sm tracking-widest uppercase">
+                Loading sequence
+              </span>
             </div>
           </div>
         )}
@@ -198,7 +200,9 @@ export default function ScrollAnimation() {
           <div className="container-x w-full">
             <div className="max-w-md rounded-2xl border border-white/10 bg-neutral-900/85 p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-md md:max-w-lg md:p-10">
               <div className="mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-[#E0C67B]">
-                <span>Step {stage + 1} / {STAGES.length}</span>
+                <span>
+                  Step {stage + 1} / {STAGES.length}
+                </span>
                 <span className="h-px w-12 bg-[#E0C67B]/60"></span>
               </div>
 
@@ -208,7 +212,9 @@ export default function ScrollAnimation() {
                   <div
                     key={i}
                     className={`absolute inset-0 transition-all duration-700 ${
-                      i === stage ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-3 opacity-0'
+                      i === stage
+                        ? "translate-y-0 opacity-100"
+                        : "pointer-events-none translate-y-3 opacity-0"
                     }`}
                   >
                     <h2 className="font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
@@ -227,7 +233,7 @@ export default function ScrollAnimation() {
                   <span
                     key={i}
                     className={`h-[2px] flex-1 transition-colors duration-500 ${
-                      i <= stage ? 'bg-[#BC922C]' : 'bg-white/15'
+                      i <= stage ? "bg-[#BC922C]" : "bg-white/15"
                     }`}
                   />
                 ))}
