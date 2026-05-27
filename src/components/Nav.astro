@@ -1,0 +1,25 @@
+---
+const links = [
+  { href: '#services', label: 'Services' },
+  { href: '#why', label: 'Why Rumeira' },
+  { href: '#results', label: 'Results' },
+  { href: '#process', label: 'Process' },
+];
+---
+
+<header class="absolute inset-x-0 top-0 z-40">
+  <div class="container-x flex items-center justify-between py-6">
+    <a href="/" class="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
+      <span class="inline-block h-2 w-2 rounded-full bg-gold"></span>
+      Rumeira
+    </a>
+    <nav class="hidden items-center gap-9 md:flex" aria-label="Primary">
+      {links.map((l) => (
+        <a href={l.href} class="text-sm text-ink/70 transition-colors hover:text-ink">{l.label}</a>
+      ))}
+    </nav>
+    <a href="#cta" class="hidden rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-gold hover:text-gold md:inline-flex">
+      Book a call
+    </a>
+  </div>
+</header>

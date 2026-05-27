@@ -1,0 +1,78 @@
+---
+const services = [
+  {
+    n: '01',
+    title: 'Digital Marketing',
+    summary: 'Search Everywhere Optimization across Google, Reddit, TikTok, LinkedIn, ChatGPT, Perplexity, and Claude. Paid ads, local rankings, and content that compounds.',
+    items: ['SEO + Generative Engine Optimization', 'Google Ads & industry platforms', 'Local map pack & Google Business Profile', 'Social content systems'],
+  },
+  {
+    n: '02',
+    title: 'Website Design',
+    summary: 'Conversion-driven websites built on modern stacks. Fast loading, clean structure, and pages designed for action, not decoration.',
+    items: ['Webflow & custom builds', 'Conversion architecture', 'Core Web Vitals tuned', 'Unlimited revisions'],
+  },
+  {
+    n: '03',
+    title: 'AI Strategy',
+    summary: 'Workflow automation that removes manual work from sales, marketing, and ops. Build the system once, capture the leverage forever.',
+    items: ['Lead capture & routing', 'AI agents & internal tools', 'CRM and ops integrations', 'Reporting & analytics'],
+  },
+];
+---
+
+<section id="services" class="bg-white py-24 md:py-36">
+  <div class="container-x">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div class="max-w-2xl">
+        <span class="eyebrow">
+          <span class="h-px w-6 bg-gold"></span>
+          Services
+        </span>
+        <h2 class="mt-5 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
+          Three disciplines.<br/>
+          <span class="text-ink/40">One growth system.</span>
+        </h2>
+      </div>
+      <p class="max-w-md text-base text-ink/60 md:text-lg">
+        We don't sell services in isolation. Marketing, web, and AI are wired together so each one makes the next more effective.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 md:grid-cols-3">
+      {services.map((s) => (
+        <article class="group relative flex flex-col bg-white p-8 transition-colors duration-500 hover:bg-gold/[0.03] md:p-10">
+          <div class="flex items-center justify-between">
+            <span class="font-display text-sm font-medium text-gold">{s.n}</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-ink/15 transition-colors group-hover:bg-gold"></span>
+          </div>
+
+          <h3 class="mt-10 font-display text-2xl font-medium leading-tight md:text-3xl">
+            {s.title}
+          </h3>
+          <p class="mt-4 text-sm leading-relaxed text-ink/65 md:text-base">
+            {s.summary}
+          </p>
+
+          <ul class="mt-8 space-y-3 border-t border-black/10 pt-6">
+            {s.items.map((item) => (
+              <li class="flex items-start gap-3 text-sm text-ink/75">
+                <svg class="mt-1 h-3 w-3 flex-none text-gold" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 6.5L5 9.5L10 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-10 flex items-center gap-2 text-sm font-medium text-ink/40 transition-colors group-hover:text-gold">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M1 6h10m0 0L6 1m5 5L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+const pillars = [
+  {
+    title: 'Systems, not just traffic',
+    body: 'A website is not a brochure. Channels are not a checklist. We build the full system that converts attention into revenue, and engineer it to keep working without you.',
+  },
+  {
+    title: 'Marketing built for AI search',
+    body: 'Prospects already ask ChatGPT, Perplexity, and Gemini before they ever see Google. We make sure those models recommend you, with our Generative Engine Optimization approach.',
+  },
+  {
+    title: 'Automation as a multiplier',
+    body: 'AI workflows replace the manual lag between lead, follow-up, and close. The same team handles 3x the volume, with cleaner data and faster response times.',
+  },
+  {
+    title: 'Conversion before traffic',
+    body: 'Traffic without conversion is theatre. We measure outcomes that move revenue: booked calls, qualified leads, closed deals, lifetime value.',
+  },
+];
+---
+
+<section id="why" class="relative bg-black py-24 text-white md:py-36">
+  <div class="pointer-events-none absolute inset-0 bg-grid-dark opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"></div>
+  <div class="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-gold/10 blur-3xl"></div>
+
+  <div class="container-x relative">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-gold-soft">
+        <span class="h-px w-6 bg-gold-soft"></span>
+        Why Rumeira
+      </span>
+      <h2 class="mt-5 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
+        Most agencies sell pieces.<br/>
+        <span class="text-white/45">We build the engine.</span>
+      </h2>
+      <p class="mt-6 max-w-2xl text-lg text-white/65">
+        We integrate marketing, web, and AI so they reinforce each other. The result is a measurable, repeatable growth system, not a stack of disconnected campaigns.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2">
+      {pillars.map((p, i) => (
+        <div class="bg-black p-8 transition-colors duration-500 hover:bg-white/[0.02] md:p-12">
+          <div class="flex items-center gap-3 text-gold-soft">
+            <span class="font-display text-sm">0{i + 1}</span>
+            <span class="h-px w-8 bg-gold-soft/60"></span>
+          </div>
+          <h3 class="mt-6 font-display text-2xl font-medium leading-tight md:text-3xl">
+            {p.title}
+          </h3>
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-white/60 md:text-base">
+            {p.body}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

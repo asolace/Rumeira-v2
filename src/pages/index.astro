@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import WhyRumeira from '../components/WhyRumeira.astro';
+import Results from '../components/Results.astro';
+import Process from '../components/Process.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import ScrollAnimation from '../components/ScrollAnimation.jsx';
+---
+
+<BaseLayout
+  title="Rumeira — Digital marketing for AI and humans."
+  description="Rumeira is a digital agency building integrated growth systems: conversion-driven websites, multi-channel marketing (Google, AI search, paid, local), and AI workflow automation."
+>
+  <Nav />
+  <main id="main">
+    <Hero />
+    <ScrollAnimation client:visible />
+    <Services />
+    <WhyRumeira />
+    <Results />
+    <Process />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>
