@@ -9,9 +9,15 @@ const links = [
 
 <header class="absolute inset-x-0 top-0 z-40">
   <div class="container-x flex items-center justify-between py-6">
-    <a href="/" class="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-      <span class="inline-block h-2 w-2 rounded-full bg-gold"></span>
-      Rumeira
+    <a href="/" aria-label="Rumeira">
+      <img
+        src="/images/Rumeira Brand Right.svg"
+        alt="Rumeira"
+        width="160"
+        height="48"
+        class="h-9 w-auto object-contain"
+        loading="eager"
+      />
     </a>
     <nav class="hidden items-center gap-9 md:flex" aria-label="Primary">
       {links.map((l) => (

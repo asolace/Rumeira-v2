@@ -198,7 +198,7 @@ export default function ScrollAnimation() {
         {/* Overlay text */}
         <div className="relative z-10 flex h-full items-start pt-24 md:pt-28">
           <div className="container-x w-full">
-            <div className="max-w-md rounded-2xl border border-white/10 bg-neutral-900/85 p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-md md:max-w-lg md:p-10">
+            <div className="max-w-md rounded-2xl border border-white/10 bg-black/85 p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-md md:max-w-lg md:p-10">
               <div className="mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-[#E0C67B]">
                 <span>
                   Step {stage + 1} / {STAGES.length}
@@ -249,8 +249,20 @@ export default function ScrollAnimation() {
             className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-[#BC922C] hover:bg-[#987622] hover:text-white"
           >
             Want animations on your website?
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M1 6h10m0 0L6 1m5 5L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M1 6h10m0 0L6 1m5 5L6 11"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </a>
         </div>
