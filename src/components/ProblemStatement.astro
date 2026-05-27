@@ -1,0 +1,91 @@
+---
+---
+
+<section class="bg-white py-24 md:py-36">
+  <div class="container-x">
+    <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+
+      <!-- LEFT: sticky pitch -->
+      <div class="flex flex-col gap-8 lg:sticky lg:top-28 lg:self-start">
+        <span class="eyebrow">
+          <span class="h-px w-6 bg-gold"></span>
+          The real problem
+        </span>
+        <h2 class="font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-[3.25rem]">
+          Here's why your business is struggling to get more leads.
+        </h2>
+
+        <p class="text-lg font-semibold text-ink md:text-xl">
+          Your business is struggling because your marketing strategy is outdated.
+        </p>
+
+        <p class="text-base leading-relaxed text-ink/65 md:text-lg">
+          We're in the age of AI. That means you need to start targeting for both AI
+          <span class="font-medium text-ink">(GEO)</span> and humans. If your business isn't showing up where your customers are searching, someone else's is.
+        </p>
+
+        <div>
+          <p class="text-base leading-relaxed text-ink/65 md:text-lg">
+            In order to get meaningful results, you need to show up in <span class="font-medium text-ink">all parts of Search</span> — to take up as much Google search real estate as possible.
+          </p>
+          <ul class="mt-6 space-y-3">
+            {[
+              'Local Service Ads',
+              'PPC Ads',
+              'Local Pack',
+              'Organic Content',
+              'Traditional Listing',
+            ].map((item) => (
+              <li class="flex items-center gap-3 text-base text-ink/80">
+                <span class="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-gold/10">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                    <path d="M2 5.5L4 7.5L8 3" stroke="#987622" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p class="text-base leading-relaxed text-ink/65 md:text-lg">
+          Additionally, it's crucial to have a strong digital presence not only on Google but also on
+          <span class="font-medium text-ink">Social Media Platforms</span>,
+          <span class="font-medium text-ink">LLMs</span> (ChatGPT, Gemini, Perplexity AI, and Claude AI)
+          and any other industry-relevant directories to maximize exposure for your business.
+        </p>
+
+        <!-- Pullquote -->
+        <blockquote class="relative rounded-2xl border border-black/10 bg-[#FBF8EF] p-8 md:p-10">
+          <span class="pointer-events-none absolute -top-4 left-8 font-display text-7xl leading-none text-gold/20 select-none">&ldquo;</span>
+          <p class="relative text-base leading-relaxed text-ink md:text-lg">
+            Don't let SEO agencies fool you. Website traffic isn't an indicator your website is doing well.
+            A website's purpose isn't traffic — it's <span class="font-semibold text-ink">conversion</span>.
+          </p>
+          <footer class="mt-6 flex items-center gap-4">
+            <span class="h-px w-8 bg-gold"></span>
+            <div>
+              <div class="text-sm font-semibold text-ink">Jack He</div>
+              <div class="text-xs text-ink/50">Owner, Rumeira</div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+
+      <!-- RIGHT: image + body content (taller column, drives the scroll) -->
+      <div class="flex flex-col gap-10">
+        <div class="overflow-hidden rounded-2xl border border-black/[0.06] shadow-[0_40px_100px_-30px_rgba(0,0,0,0.2)]">
+          <img
+            src="/images/James M. McGill Ad v2.webp"
+            alt="Rumeira digital marketing — search everywhere optimization example"
+            width="900"
+            height="1100"
+            class="w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

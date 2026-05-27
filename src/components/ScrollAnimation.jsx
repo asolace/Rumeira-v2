@@ -13,14 +13,14 @@ const STAGES = [
   },
   {
     title: "Website optimization",
-    body: "A conversion-focused website built for speed, clarity, and trust.",
+    body: "Optimize a conversion-focused website built for SEO, user-journey, and trust.",
   },
   {
     title: "Marketing channels",
-    body: "Search, local, AI platforms, social media, and paid ads",
+    body: "Search, local map pack, AI recommendations, social media, and paid ads",
   },
   {
-    title: "We integrate AI workflows",
+    title: "AI workflows integration",
     body: "Project management, AI automation, content, and reporting on autopilot.",
   },
   {
