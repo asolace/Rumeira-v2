@@ -242,9 +242,17 @@ export default function ScrollAnimation() {
           </div>
         </div>
 
-        {/* Scroll hint */}
-        <div className="pointer-events-none absolute bottom-6 right-6 hidden text-xs uppercase tracking-[0.2em] text-white/40 md:block">
-          Scroll to continue
+        {/* CTA button */}
+        <div className="absolute bottom-6 right-6 hidden md:block">
+          <a
+            href="#cta"
+            className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-[#BC922C] hover:bg-[#987622] hover:text-white"
+          >
+            Want animations on your website?
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M1 6h10m0 0L6 1m5 5L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
