@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Clash Display';
-  src: url('/fonts/ClashDisplay-400.woff2') format('woff2');
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDisplay-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Clash Display';
-  src: url('/fonts/ClashDisplay-500.woff2') format('woff2');
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDisplay-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Clash Display';
-  src: url('/fonts/ClashDisplay-600.woff2') format('woff2');
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDisplay-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-400.woff2') format('woff2');
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-500.woff2') format('woff2');
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-700.woff2') format('woff2');
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-700.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -52,19 +52,24 @@
     scroll-behavior: smooth;
   }
   body {
-    font-family: 'Satoshi', system-ui, sans-serif;
-    color: #0A0A0A;
-    background: #FFFFFF;
-    font-feature-settings: 'ss01', 'ss02';
+    font-family: "Satoshi", system-ui, sans-serif;
+    color: #0a0a0a;
+    background: #ffffff;
+    font-feature-settings: "ss01", "ss02";
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Clash Display', system-ui, sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Clash Display", system-ui, sans-serif;
     font-weight: 500;
     letter-spacing: -0.025em;
   }
   ::selection {
     background: #987622;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 
@@ -89,21 +94,25 @@
 /* Subtle grid background utility */
 .bg-grid-light {
   background-image:
-    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 .bg-grid-dark {
   background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }

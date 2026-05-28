@@ -29,12 +29,12 @@ const cols = [
 ];
 
 const socials = [
-  { href: 'https://www.facebook.com/rumeira', label: 'Facebook' },
-  { href: 'https://www.instagram.com/rumeira', label: 'Instagram' },
-  { href: 'https://www.linkedin.com/company/rumeira', label: 'LinkedIn' },
-  { href: 'https://x.com/rumeira', label: 'X' },
-  { href: 'https://www.tiktok.com/@rumeira', label: 'TikTok' },
-  { href: 'https://www.youtube.com/@rumeira', label: 'YouTube' },
+  { href: 'https://www.facebook.com/rumeira', label: 'Facebook', icon: '/images/facebook-logo.svg' },
+  { href: 'https://www.instagram.com/rumeira', label: 'Instagram', icon: '/images/instagram-logo.svg' },
+  { href: 'https://www.linkedin.com/company/rumeira', label: 'LinkedIn', icon: '/images/linkedin-logo.svg' },
+  { href: 'https://x.com/rumeira', label: 'X', icon: '/images/x-logo-white.svg' },
+  { href: 'https://www.tiktok.com/@rumeira', label: 'TikTok', icon: '/images/tiktok-logo.svg' },
+  { href: 'https://www.youtube.com/@rumeira', label: 'YouTube', icon: '/images/youtube-logo.svg' },
 ];
 
 const year = new Date().getFullYear();
@@ -57,10 +57,23 @@ const year = new Date().getFullYear();
         <p class="mt-6 max-w-sm text-sm leading-relaxed text-white/55">
           Digital marketing, conversion-driven websites, and AI workflow systems engineered as one growth engine.
         </p>
-        <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="mailto:start@rumeira.com"
+          class="mt-8 inline-block font-bold text-white underline decoration-2 underline-offset-[6px] transition-colors hover:text-gold"
+        >
+          start@rumeira.com
+        </a>
+
+        <div class="mt-6 flex flex-wrap gap-4">
           {socials.map((s) => (
-            <a href={s.href} aria-label={s.label} class="rounded-full border border-white/15 px-4 py-2 text-xs text-white/70 transition-colors hover:border-gold hover:text-gold">
-              {s.label}
+            <a
+              href={s.href}
+              aria-label={s.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex h-9 w-9 items-center justify-center transition-transform duration-300 hover:scale-110"
+            >
+              <img src={s.icon} alt="" width="22" height="22" class="h-[22px] w-[22px] object-contain" loading="lazy" />
             </a>
           ))}
         </div>
