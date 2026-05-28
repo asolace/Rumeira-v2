@@ -66,6 +66,7 @@
     font-family: "Clash Display", system-ui, sans-serif;
     font-weight: 500;
     letter-spacing: -0.025em;
+    word-spacing: 0.25em;
   }
   ::selection {
     background: #987622;

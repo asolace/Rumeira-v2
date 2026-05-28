@@ -1,0 +1,38 @@
+---
+---
+
+<section class="relative overflow-hidden bg-white pt-32 pb-20 md:pt-40 md:pb-28">
+  <div class="pointer-events-none absolute inset-0 bg-grid-light opacity-60 [mask-image:radial-gradient(ellipse_at_top_left,black_20%,transparent_70%)]"></div>
+  <div class="pointer-events-none absolute -top-32 left-[-10%] h-[560px] w-[560px] rounded-full bg-gold/15 blur-3xl"></div>
+
+  <div class="container-x relative">
+    <div class="max-w-3xl">
+      <span class="eyebrow">
+        <span class="h-px w-6 bg-gold"></span>
+        About Rumeira
+      </span>
+
+      <h1 class="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tightest text-ink sm:text-6xl md:text-7xl lg:text-[5rem]">
+        Built for long-term relationships,<br/>
+        <span class="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">not short-term wins.</span>
+      </h1>
+
+      <p class="mt-7 max-w-2xl text-balance text-lg leading-relaxed text-ink/65 md:text-xl">
+        Rumeira is a small, senior team that builds full growth systems: conversion-driven websites, multi-channel marketing, and <span class="ai-text">AI</span> workflows engineered as one engine. No silos, no handoffs, no ten-person account teams.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-3">
+      {[
+        { k: 'Founded', v: '2023' },
+        { k: 'Based in', v: 'New York' },
+        { k: 'Built by', v: 'Senior engineers' },
+      ].map((item) => (
+        <div class="bg-white p-8 md:p-10">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink/40">{item.k}</div>
+          <div class="mt-3 font-display text-2xl font-medium text-ink md:text-3xl">{item.v}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

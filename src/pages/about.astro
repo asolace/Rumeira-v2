@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import AboutHero from '../components/AboutHero.astro';
+import AboutOwner from '../components/AboutOwner.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="About — Rumeira"
+  description="Rumeira is a senior team building integrated growth systems — websites, marketing, and AI workflows. Founded in 2023 by Jack He, Principal Frontend Engineer at Morgan Stanley."
+  canonical="https://rumeira.com/about"
+>
+  <Nav />
+  <main id="main">
+    <AboutHero />
+    <AboutOwner />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>
