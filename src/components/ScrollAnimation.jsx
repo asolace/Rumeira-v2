@@ -219,7 +219,7 @@ export default function ScrollAnimation() {
                 <span className="h-px w-12 bg-[#E0C67B]/60"></span>
               </div>
 
-              {/* Animated text — keyed for crossfade */}
+              {/* Animated text -keyed for crossfade */}
               <div className="relative min-h-[180px] md:min-h-[220px]">
                 {STAGES.map((s, i) => (
                   <div

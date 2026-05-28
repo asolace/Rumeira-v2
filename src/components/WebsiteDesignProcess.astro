@@ -1,0 +1,63 @@
+---
+const steps = [
+  {
+    n: '01',
+    title: 'Discovery',
+    body: 'We map your buyer, their objections, and the action your site needs to drive. Strategy before pixels -every page gets a job.',
+  },
+  {
+    n: '02',
+    title: 'Architecture',
+    body: 'Wireframe the funnel before we design anything pretty. Section order, copy hierarchy, and CTA placement are locked first.',
+  },
+  {
+    n: '03',
+    title: 'Design',
+    body: 'High-fidelity design in Figma, reviewed async via Loom. Unlimited revisions until each page feels inevitable.',
+  },
+  {
+    n: '04',
+    title: 'Build',
+    body: 'Engineered in Astro with performance budgets enforced from day one. Deployed on Vercel with real Core Web Vitals scores.',
+  },
+  {
+    n: '05',
+    title: 'Iterate',
+    body: 'Post-launch we measure what converts, what stalls, and we keep refining. Sites are systems, not deliverables.',
+  },
+];
+---
+
+<section id="process" class="bg-white py-24 md:py-36">
+  <div class="container-x">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="eyebrow">
+        <span class="h-px w-6 bg-gold"></span>
+        Process
+      </span>
+      <h2 class="mt-5 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
+        Five steps from brief to launch.
+      </h2>
+      <p class="mx-auto mt-6 max-w-xl text-base text-ink/60 md:text-lg">
+        Same sequence every time. Different output every time.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-5">
+      {steps.map((s, i) => (
+        <div class="relative flex flex-col rounded-2xl border border-gold/15 bg-[#FBF8EF]/40 p-6 transition-all duration-300 hover:border-gold/40 hover:bg-white">
+          <div class="flex items-center justify-between">
+            <span class="font-display text-2xl font-medium text-gold">{s.n}</span>
+            {i < steps.length - 1 && (
+              <svg class="hidden h-3 w-6 text-gold/40 md:block" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+                <path d="M1 6h22m0 0L18 1m5 5l-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            )}
+          </div>
+          <h3 class="mt-8 font-display text-xl font-medium">{s.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink/65">{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

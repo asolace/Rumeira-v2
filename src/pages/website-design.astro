@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import WebsiteDesignHero from '../components/WebsiteDesignHero.astro';
+import WebsiteDesignProblem from '../components/WebsiteDesignProblem.astro';
+import WebsiteDesignApproach from '../components/WebsiteDesignApproach.astro';
+import WebsiteDesignProjects from '../components/WebsiteDesignProjects.astro';
+import WebsiteDesignProcess from '../components/WebsiteDesignProcess.astro';
+import WebsiteDesignFAQ from '../components/WebsiteDesignFAQ.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Website Design | Rumeira"
+  description="Conversion-driven website design engineered on modern stacks. Built for action -not decoration. Unlimited revisions, sub-1s load times, and pages structured to turn visitors into leads."
+  canonical="https://rumeira.com/website-design"
+>
+  <Nav />
+  <main id="main">
+    <WebsiteDesignHero />
+    <WebsiteDesignProblem />
+    <WebsiteDesignApproach />
+    <WebsiteDesignProjects />
+    <WebsiteDesignProcess />
+    <WebsiteDesignFAQ />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>
