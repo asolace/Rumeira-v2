@@ -1,29 +1,48 @@
 ---
 const cols = [
   {
-    title: 'Services',
+    title: 'Company',
+    links: [
+      { href: '#', label: 'About' },
+      { href: '#', label: 'Careers' },
+      { href: '#', label: 'Blogs' },
+    ],
+  },
+  {
+    title: 'Solutions',
     links: [
       { href: '#services', label: 'Digital Marketing' },
       { href: '#services', label: 'Website Design' },
       { href: '#services', label: 'AI Strategy' },
-      { href: '#process', label: 'Process' },
     ],
   },
   {
-    title: 'Company',
+    title: 'Services',
     links: [
-      { href: '#why', label: 'Why Rumeira' },
-      { href: '#results', label: 'Results' },
-      { href: '#cta', label: 'Contact' },
-      { href: 'https://pm.rumeira.com', label: 'Client login' },
+      { href: '#', label: 'On-Page SEO' },
+      { href: '#', label: 'Facebook Ads' },
+      { href: '#', label: 'Google Ads' },
+      { href: '#', label: 'GBP Setup' },
+      { href: '#', label: 'Google Map Rank' },
+      { href: '#', label: 'Link Building' },
+      { href: '#', label: 'AI Visibility' },
+      { href: '#', label: 'AI Website' },
+      { href: '#', label: 'Website Audit' },
+      { href: '#', label: 'Brand Audit' },
+      { href: '#', label: 'Software Development' },
     ],
   },
   {
-    title: 'Contact',
+    title: 'Membership',
     links: [
-      { href: 'mailto:start@rumeira.com', label: 'start@rumeira.com' },
-      { href: '#cta', label: 'Book a call' },
-      { href: '#cta', label: 'Get a free audit' },
+      { href: '#', label: 'Analytics' },
+      { href: '#', label: 'Resources' },
+      { href: '#', label: 'Research' },
+      { href: '#', label: 'Concepts' },
+      { href: '#', label: 'Development' },
+      { divider: true },
+      { href: 'https://pm.rumeira.com/#client', label: 'Client Login' },
+      { href: 'https://pm.rumeira.com', label: 'Staff Login' },
     ],
   },
 ];
@@ -51,7 +70,7 @@ const year = new Date().getFullYear();
 <footer class="bg-black text-white">
   <div class="container-x pb-20 pt-36 md:pb-28 md:pt-40">
     <div class="grid gap-12 md:grid-cols-12">
-      <div class="md:col-span-5">
+      <div class="md:col-span-4 min-w-[276px]">
         <a href="/" aria-label="Rumeira">
           <img
             src="/images/Rumeira Brand Right - White Text.svg"
@@ -67,19 +86,19 @@ const year = new Date().getFullYear();
         </p>
         <a
           href="mailto:start@rumeira.com"
-          class="mt-8 inline-block font-bold text-white underline decoration-2 underline-offset-[6px] transition-colors hover:text-gold"
+          class="mt-8 inline-block text-lg font-bold text-white underline decoration-2 underline-offset-[6px] transition-colors hover:text-gold"
         >
           start@rumeira.com
         </a>
 
-        <div class="mt-6 flex flex-wrap gap-4">
+        <div class="mt-6 flex flex-wrap gap-3">
           {socials.map((s) => (
             <a
               href={s.href}
               aria-label={s.label}
               target="_blank"
               rel="noopener noreferrer"
-              class="flex h-9 w-9 items-center justify-center transition-transform duration-300 hover:scale-110"
+              class="flex h-9 w-9 items-center transition-transform duration-300 hover:scale-110"
             >
               <img src={s.icon} alt="" width="22" height="22" class="h-[22px] w-[22px] object-contain" loading="lazy" />
             </a>
@@ -87,15 +106,19 @@ const year = new Date().getFullYear();
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-10 md:col-span-7 md:grid-cols-3">
+      <div class="grid grid-cols-2 gap-10 md:col-span-8 md:grid-cols-4">
         {cols.map((c) => (
           <div>
             <h4 class="text-xs uppercase tracking-[0.2em] text-white/40">{c.title}</h4>
             <ul class="mt-5 space-y-3">
               {c.links.map((l) => (
-                <li>
-                  <a href={l.href} class="text-sm text-white transition-colors hover:text-gold">{l.label}</a>
-                </li>
+                l.divider ? (
+                  <li aria-hidden="true" class="py-1"><hr class="border-t border-white/15" /></li>
+                ) : (
+                  <li>
+                    <a href={l.href} class="text-sm text-white transition-colors hover:text-gold">{l.label}</a>
+                  </li>
+                )
               ))}
             </ul>
           </div>
