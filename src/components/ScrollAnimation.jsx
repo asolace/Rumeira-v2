@@ -258,7 +258,7 @@ export default function ScrollAnimation() {
         {/* CTA button */}
         <div className="absolute bottom-6 right-6 hidden md:block">
           <a
-            href="#cta"
+            href="/get-started"
             className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-[#BC922C] hover:bg-[#987622] hover:text-white"
           >
             Want animations on your website?

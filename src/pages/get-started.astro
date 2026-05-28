@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const coverage = [
+  {
+    title: 'Your business needs',
+    body: "Every business is different. We start by understanding your goals, your market, and what success actually looks like for you.",
+    icon: `<path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.25" fill="currentColor"/>`,
+  },
+  {
+    title: 'Your current performance',
+    body: "We'll come prepared with a review of your current metrics and performance, benchmarked against your competitors.",
+    icon: `<path d="M4 19V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 19h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 15l4-4 3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 8h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  },
+  {
+    title: 'How we can help',
+    body: 'We outline a clear plan with the right mix of strategy, design, and technology to help you grow.',
+    icon: `<path d="M12 3v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5.6 5.6l1.4 1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 12h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M19 12h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M17 7l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 18h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 21h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 15a5 5 0 1 1 6 0c-.6.4-1 1-1 1.7V17h-4v-.3c0-.7-.4-1.3-1-1.7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Get Started — Book a Call with Rumeira"
+  description="Book a call with Rumeira to discuss your business needs, current performance, and how we can help you grow."
+  canonical="https://rumeira.com/get-started"
+>
+  <Nav minimal />
+  <main id="main">
+    <section class="relative overflow-hidden bg-white pt-32 pb-20 md:pt-40 md:pb-28">
+      <div class="pointer-events-none absolute inset-0 bg-grid-light opacity-60 [mask-image:radial-gradient(ellipse_at_top_left,black_20%,transparent_70%)]"></div>
+      <div class="pointer-events-none absolute -top-32 left-[-10%] h-[560px] w-[560px] rounded-full bg-gold/15 blur-3xl"></div>
+
+      <div class="container-x relative">
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5 lg:pr-4">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              Work with us, or just have questions
+            </span>
+
+            <h1 class="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tightest text-ink sm:text-6xl md:text-7xl">
+              Work with
+              <span class="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">us.</span>
+            </h1>
+
+            <p class="mt-7 max-w-xl text-balance text-lg leading-relaxed text-ink/65">
+              Book a call to discuss your business needs and the roadmap to get there. We'll cover:
+            </p>
+
+            <ul class="mt-10 space-y-7">
+              {coverage.map((c) => (
+                <li class="flex items-start gap-5">
+                  <span class="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-gold/10 text-gold">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" set:html={c.icon} />
+                  </span>
+                  <div>
+                    <h2 class="font-display text-lg font-medium text-ink">{c.title}</h2>
+                    <p class="mt-1.5 leading-relaxed text-ink/65">{c.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <hr class="my-10 border-t border-black/10" />
+
+            <a
+              href="mailto:start@rumeira.com"
+              class="inline-block text-2xl font-bold text-ink underline decoration-2 underline-offset-[6px] transition-colors hover:text-gold md:text-3xl"
+            >
+              start@rumeira.com
+            </a>
+          </div>
+
+          <div class="lg:col-span-7 lg:pl-4">
+            <div class="rounded-2xl border border-black/10 bg-white p-2 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.2)] md:p-3">
+              <div
+                class="calendly-inline-widget"
+                data-url="https://calendly.com/jackhe-rumeira/business-growth-consultation"
+                style="min-width:320px;height:900px;"
+              ></div>
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async is:inline></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer minimal />
+</BaseLayout>
