@@ -297,6 +297,10 @@ const featured: Array<{
         <div class="mt-14 grid gap-8 sm:grid-cols-2">
           {pages.map((p) => (
             <figure class="overflow-hidden rounded-2xl border border-black/10 bg-white">
+              <figcaption class="flex items-center justify-between border-b border-black/10 p-5">
+                <span class="font-display text-base font-medium">{p.name}</span>
+                <span class="text-[10px] uppercase tracking-[0.18em] text-ink/90">Scroll to see full page</span>
+              </figcaption>
               <div class="relative h-[520px] overflow-y-auto bg-[#F3F4F6] md:h-[680px]">
                 <img
                   src={p.img}
@@ -308,10 +312,6 @@ const featured: Array<{
                 />
                 <div class="pointer-events-none sticky bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white/90 to-transparent"></div>
               </div>
-              <figcaption class="flex items-center justify-between p-5">
-                <span class="font-display text-base font-medium">{p.name}</span>
-                <span class="text-[10px] uppercase tracking-[0.18em] text-ink/90">Scroll to see full page</span>
-              </figcaption>
             </figure>
           ))}
         </div>
