@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const values = [
+  {
+    title: 'Senior by default',
+    body: 'No ten-person account teams, no junior handoffs. Every person on the team owns their craft end-to-end.',
+    icon: `<path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8 9.5 8 12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  },
+  {
+    title: 'Build the engine',
+    body: 'Marketing, design, software, and AI are one system — not silos. We hire people who can think across the whole stack.',
+    icon: `<path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="18" cy="17" r="2" stroke="currentColor" stroke-width="1.5"/>`,
+  },
+  {
+    title: 'Long-term, not loud',
+    body: 'We are built for compounding client relationships, not quarterly churn. The work has to actually move the needle.',
+    icon: `<path d="M4 19V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 19h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 15l4-4 3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 8h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  },
+];
+
+const disciplines = [
+  'Engineering',
+  'Design',
+  'Marketing',
+  'AI & Automation',
+];
+---
+
+<BaseLayout
+  title="Careers — Rumeira"
+  description="Join Rumeira — a senior team building integrated growth systems across marketing, design, software, and AI. No open positions right now, but we're always meeting great people."
+  canonical="https://rumeira.com/careers"
+>
+  <Nav />
+  <main id="main">
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-white pt-32 pb-20 md:pt-40 md:pb-28">
+      <div class="pointer-events-none absolute inset-0 bg-grid-light opacity-60 [mask-image:radial-gradient(ellipse_at_top_left,black_20%,transparent_70%)]"></div>
+      <div class="pointer-events-none absolute -top-32 left-[-10%] h-[560px] w-[560px] rounded-full bg-gold/15 blur-3xl"></div>
+
+      <div class="container-x relative">
+        <div class="max-w-3xl">
+          <span class="eyebrow">
+            <span class="h-px w-6 bg-gold"></span>
+            Careers at Rumeira
+          </span>
+
+          <h1 class="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tightest text-ink sm:text-6xl md:text-7xl lg:text-[5rem]">
+            A small team,<br/>
+            <span class="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">built to compound.</span>
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-balance text-lg leading-relaxed text-ink/65 md:text-xl">
+            Rumeira hires slowly and intentionally. Every role is senior, every hire owns their craft, and the bar stays high because the team stays small.
+          </p>
+        </div>
+
+        <!-- Disciplines strip -->
+        <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
+          {disciplines.map((d, i) => (
+            <div class="bg-white p-8 md:p-10">
+              <div class="text-xs uppercase tracking-[0.2em] text-ink/40">{`0${i + 1}`}</div>
+              <div class="mt-3 font-display text-2xl font-medium text-ink md:text-3xl">{d}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- NO POSITIONS / OPEN APPLICATION -->
+    <section class="relative bg-black py-24 text-white md:py-32">
+      <div class="pointer-events-none absolute inset-0 bg-grid-dark opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"></div>
+      <div class="pointer-events-none absolute -right-32 top-1/4 h-96 w-96 rounded-full bg-gold/10 blur-3xl"></div>
+
+      <div class="container-x relative">
+        <div class="grid items-start gap-16 lg:grid-cols-12 lg:gap-20">
+          <!-- LEFT: status card -->
+          <aside class="lg:col-span-5 lg:sticky lg:top-28">
+            <div class="relative">
+              <div class="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-br from-gold/25 via-gold-soft/10 to-transparent blur-2xl"></div>
+
+              <div class="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#101010] to-[#050505] p-8 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] md:p-10">
+                <div class="flex items-center gap-3">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-soft opacity-60"></span>
+                    <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold-soft"></span>
+                  </span>
+                  <span class="text-xs uppercase tracking-[0.22em] text-gold-soft">Hiring status</span>
+                </div>
+
+                <h3 class="mt-6 font-display text-3xl font-medium leading-tight md:text-4xl">
+                  No open positions<br/>
+                  <span class="text-gold">right now.</span>
+                </h3>
+
+                <p class="mt-5 text-sm leading-relaxed text-white/60 md:text-base">
+                  We're not actively hiring for any role at the moment. When we are, openings will be posted here first.
+                </p>
+
+                <div class="mt-8 border-t border-white/10 pt-6">
+                  <div class="text-xs uppercase tracking-[0.2em] text-white/40">Last updated</div>
+                  <div class="mt-2 font-display text-lg text-white">
+                    {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- RIGHT: open application -->
+          <div class="lg:col-span-7">
+            <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-gold-soft">
+              <span class="h-px w-6 bg-gold-soft"></span>
+              Open application
+            </span>
+            <h2 class="mt-5 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+              Always meeting<br/>
+              <span class="text-gold">great people.</span>
+            </h2>
+
+            <div class="mt-8 space-y-6 text-base leading-relaxed text-white/70 md:text-lg">
+              <p>
+                Even when there's nothing posted, we keep an open line for senior engineers, designers, marketers, and AI/automation specialists who think across disciplines.
+              </p>
+              <p>
+                If you've built things you're proud of and you're looking for a team that takes craft seriously, we'd like to hear from you.
+              </p>
+            </div>
+
+            <!-- What to send -->
+            <div class="mt-12">
+              <div class="flex items-center gap-3 text-gold-soft">
+                <span class="font-display text-sm">What to send</span>
+                <span class="h-px flex-1 bg-white/10"></span>
+              </div>
+
+              <ul class="mt-8 space-y-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+                {values.map((v, i) => (
+                  <li class="grid gap-4 bg-black p-6 transition-colors duration-500 hover:bg-white/[0.02] md:grid-cols-[7rem_1fr] md:gap-8 md:p-8">
+                    <div class="flex items-center gap-3 md:flex-col md:items-start md:gap-2">
+                      <span class="font-display text-sm text-gold">{`0${i + 1}`}</span>
+                      <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" set:html={v.icon} />
+                      </span>
+                    </div>
+                    <div>
+                      <div class="font-display text-lg font-medium leading-tight md:text-xl">{v.title}</div>
+                      <p class="mt-3 max-w-xl text-sm leading-relaxed text-white/60 md:text-base">{v.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Apply -->
+            <!-- <div class="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
+              <div class="text-xs uppercase tracking-[0.2em] text-gold-soft">Send your work</div>
+              <p class="mt-3 text-sm leading-relaxed text-white/70 md:text-base">
+                Email a short note about who you are, what you've built, and what you want to build next. Include links — work speaks louder than resumes.
+              </p>
+              <a
+                href="mailto:careers@rumeira.com?subject=Open%20application"
+                class="mt-6 inline-block text-xl font-bold text-white underline decoration-2 underline-offset-[6px] transition-colors hover:text-gold md:text-2xl"
+              >
+                careers@rumeira.com
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>
