@@ -6,6 +6,19 @@ const FRAME_PATH = "/frames";
 const formatFrame = (n) => String(n).padStart(4, "0");
 const frameUrl = (n) => `${FRAME_PATH}/frame_${formatFrame(n)}.webp`;
 
+const markAI = (text) => {
+  const parts = text.split(/\b(AI)\b/);
+  return parts.map((part, i) =>
+    part === "AI" ? (
+      <span key={i} style={{ color: "#b196ff", fontWeight: 500 }}>
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+};
+
 const STAGES = [
   {
     title: "Business analysis",
@@ -221,7 +234,7 @@ export default function ScrollAnimation() {
                       {s.title}
                     </h2>
                     <p className="mt-5 max-w-xl text-base text-white/75 md:text-lg">
-                      {s.body}
+                      {markAI(s.body)}
                     </p>
                   </div>
                 ))}

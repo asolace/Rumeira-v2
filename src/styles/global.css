@@ -105,6 +105,16 @@
   background-size: 56px 56px;
 }
 
+/* AI text highlight */
+.ai-text {
+  color: #7341ff;
+  font-weight: 500;
+}
+.ai-text-dark {
+  color: #b196ff;
+  font-weight: 500;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {

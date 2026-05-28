@@ -1,4 +1,5 @@
 ---
+const aiL = (t) => t.replace(/\bAI\b/g, '<span class="ai-text">AI</span>');
 const metrics = [
   { value: '3.4x', label: 'Average lead-to-call rate after CRO + automation rollout' },
   { value: '< 1.2s', label: 'Median Core Web Vitals LCP on shipped websites' },
@@ -49,7 +50,7 @@ const proofs = [
           <div class="font-display text-4xl font-medium tracking-tight text-ink md:text-5xl">
             {m.value}
           </div>
-          <div class="text-sm leading-relaxed text-ink/55">{m.label}</div>
+          <div class="text-sm leading-relaxed text-ink/55" set:html={aiL(m.label)} />
         </div>
       ))}
     </div>
@@ -63,7 +64,7 @@ const proofs = [
           <h3 class="mt-6 font-display text-xl font-medium leading-tight md:text-2xl">
             {p.title}
           </h3>
-          <p class="mt-3 text-sm leading-relaxed text-ink/65">{p.body}</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/65" set:html={aiL(p.body)} />
         </article>
       ))}
     </div>

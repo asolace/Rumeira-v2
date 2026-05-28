@@ -1,4 +1,5 @@
 ---
+const aiD = (t) => t.replace(/\bAI\b/g, '<span class="ai-text-dark">AI</span>');
 const pillars = [
   {
     title: 'Systems, not just traffic',
@@ -34,7 +35,7 @@ const pillars = [
         <span class="text-gold">We build the engine.</span>
       </h2>
       <p class="mt-6 max-w-2xl text-lg text-white/65">
-        We integrate marketing, web, and AI so they reinforce each other. The result is a measurable, repeatable growth system, not a stack of disconnected campaigns.
+        We integrate marketing, web, and <span class="ai-text-dark">AI</span> so they reinforce each other. The result is a measurable, repeatable growth system, not a stack of disconnected campaigns.
       </p>
     </div>
 
@@ -48,9 +49,7 @@ const pillars = [
           <h3 class="mt-6 font-display text-2xl font-medium leading-tight md:text-3xl">
             {p.title}
           </h3>
-          <p class="mt-4 max-w-md text-sm leading-relaxed text-white/60 md:text-base">
-            {p.body}
-          </p>
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-white/60 md:text-base" set:html={aiD(p.body)} />
         </div>
       ))}
     </div>
