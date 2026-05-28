@@ -18,7 +18,7 @@ const meta = [
   { k: 'Client', v: 'Joseph J Mainiero' },
   { k: 'Industry', v: 'Public Insurance Adjusting' },
   {
-    k: 'Scope',
+    k: 'What we did',
     items: [
       'Website Redesign',
       'Bilingual (EN + 中文)',
@@ -29,7 +29,6 @@ const meta = [
       'Content Writing',
     ],
   },
-  { k: 'Live', v: 'neadjustment.com', href: 'https://www.neadjustment.com/' },
 ];
 
 const palette = [
@@ -92,7 +91,7 @@ const beyond = [
             </p>
           </div>
 
-          <div class="lg:col-span-4">
+          <div class="lg:col-span-4 text-right">
             <a href="https://www.neadjustment.com/" target="_blank" rel="noopener" class="btn-primary w-full sm:w-auto">
               Visit live site
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -103,18 +102,11 @@ const beyond = [
           </div>
         </div>
 
-        <div class="mt-14 grid grid-cols-2 gap-6 border-t border-black/10 pt-8 md:grid-cols-4">
+        <div class="mt-14 grid grid-cols-2 gap-6 border-t border-black/10 pt-8 md:grid-cols-3">
           {meta.map((m) => (
             <div>
               <div class="text-xs uppercase tracking-[0.2em] text-ink/70">{m.k}</div>
-              {m.href ? (
-                <a href={m.href} target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors hover:text-gold">
-                  {m.v}
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                    <path d="M3 7L7 3M7 3H3M7 3V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-              ) : m.items ? (
+              {m.items ? (
                 <ul class="mt-2 flex flex-wrap gap-1.5">
                   {m.items.map((item) => (
                     <li class="rounded-full bg-ink/[0.06] px-2.5 py-1 text-xs font-medium text-ink/80">{item}</li>
@@ -297,7 +289,7 @@ const beyond = [
               </div>
               <figcaption class="flex items-center justify-between p-5">
                 <span class="font-display text-base font-medium">{p.name}</span>
-                <span class="text-[10px] uppercase tracking-[0.18em] text-ink/40">Scroll to see full page</span>
+                <span class="text-[10px] uppercase tracking-[0.18em] text-ink/90">Scroll to see full page</span>
               </figcaption>
             </figure>
           ))}
