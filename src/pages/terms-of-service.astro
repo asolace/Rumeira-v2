@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Terms of Service — Rumeira"
+  description="The Terms of Service governing Rumeira's retainer-based website design, digital marketing, and software development services."
+  canonical="https://rumeira.com/terms-of-service"
+>
+  <Nav />
+  <main id="main" class="pt-32 md:pt-40">
+    <section class="container-x pb-24 md:pb-32">
+      <header class="max-w-3xl">
+        <span class="eyebrow">Legal</span>
+        <h1 class="mt-4 text-4xl leading-[1.05] md:text-6xl">Terms of Service</h1>
+        <p class="mt-6 text-base md:text-lg">
+          <strong>Effective Date:</strong> January 1, 2023
+        </p>
+        <p class="mt-4 text-base md:text-lg">
+          These Terms of Service govern use of website design &amp; development, digital marketing, and
+          software services provided by <strong>Rumeira</strong>. By subscribing, the Client agrees to
+          these Terms.
+        </p>
+      </header>
+
+      <div class="legal-prose  max-w-3xl space-y-3 mt-6 text-base leading-relaxed">
+        <h2 class="!mt-5 text-2xl md:text-3xl">Services Provided</h2>
+        <p>Rumeira offers retainer-based services including:</p>
+        <ul class="list-disc pl-6">
+          <li>Website Design &amp; Development</li>
+          <li>Google Ads &amp; Facebook Ads Management</li>
+          <li>Keyword Research &amp; Backlink Building</li>
+          <li>Content Strategy &amp; Copywriting</li>
+          <li>On-page &amp; Technical SEO</li>
+          <li>Software Development &amp; CRM Migrations</li>
+        </ul>
+        <p>
+          The company reserves the right to adjust sub-tasks and methods of each deliverable in the best
+          interest of your business. Subcontracting and assignment of rights is permitted without prior
+          consent.
+        </p>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Client Responsibilities</h2>
+        <p>Clients must:</p>
+        <ul class="list-disc pl-6">
+          <li>Provide necessary information, access, passwords, and assistance within reasonable timeframes.</li>
+          <li>Nominate a primary point of contact representative.</li>
+          <li>Maintain permissions and legal rights for all submitted content.</li>
+          <li>Assume full responsibility for the accuracy and legality of any information or content provided.</li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Payment &amp; Billing</h2>
+        <ul class="list-disc pl-6">
+          <li>All services operate on a retainer basis and require advance payment.</li>
+          <li>Payments are automatically charged via Stripe.</li>
+          <li>Subscriptions auto-renew until canceled.</li>
+          <li>All payments are final. No refunds will be issued under any circumstances.</li>
+          <li>
+            Non-payment results in immediate service suspension, including website hosting, SEO, and ad
+            management.
+          </li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Ownership &amp; Intellectual Property</h2>
+        <ul class="list-disc pl-6">
+          <li>
+            All intellectual property rights (design, code, SEO strategies) remain the property of the
+            Company until payment for the respective billing period is received in full.
+          </li>
+          <li>Upon full payment, clients receive a non-exclusive, perpetual license.</li>
+          <li>Ownership of new content reverts to Rumeira upon non-payment or cancellation.</li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Performance Disclaimer</h2>
+        <p>
+          SEO and marketing results are subject to third-party algorithm updates. The Company does not
+          guarantee specific rankings, traffic volumes, or ROI, and is not liable for ranking fluctuations
+          caused by search engine policies.
+        </p>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Liability Limitation &amp; Indemnification</h2>
+        <ul class="list-disc pl-6">
+          <li>Clients indemnify Rumeira from claims arising from contract breaches or business operations.</li>
+          <li>
+            Company liability is capped at amounts paid during the month the claim arose, excluding lost
+            profits or consequential damages.
+          </li>
+          <li>Clients accept responsibility for business performance and legal compliance.</li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Dispute Resolution &amp; Governing Law</h2>
+        <p>
+          Disputes are governed by New York law and resolved through binding arbitration via the American
+          Arbitration Association, waiving jury trial rights.
+        </p>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Exclusive Credit Display</h2>
+        <ul class="list-disc pl-6">
+          <li>
+            Rumeira reserves the right to display &ldquo;WEBSITE DESIGN BY RUMEIRA&rdquo; in website footers
+            with a backlink to rumeira.com.
+          </li>
+          <li>A one-time $5,000 fee removes this credit.</li>
+          <li>Screenshots may be used for portfolio purposes.</li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Termination</h2>
+        <ul class="list-disc pl-6">
+          <li>Either party may terminate this agreement with written notice.</li>
+          <li>Upon termination, the Client has 60 days to request a copy of their website content.</li>
+          <li>Clients bear the costs of transitioning to new providers.</li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Force Majeure</h2>
+        <p>
+          Neither party is liable for delays or failures in performance resulting from events beyond their
+          reasonable control, including power failures, civil unrest, malicious code, or governmental
+          actions.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-prose h2 {
+    color: #0a0a0a;
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 300;
+  }
+  .legal-prose a {
+    color: #987622;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .legal-prose a:hover {
+    color: #bc922c;
+  }
+</style>

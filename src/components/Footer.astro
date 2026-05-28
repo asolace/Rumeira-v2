@@ -28,6 +28,14 @@ const cols = [
   },
 ];
 
+const legal = [
+  { href: '/terms-conditions', label: 'Terms & Conditions' },
+  { href: '/terms-of-service', label: 'Terms of Service' },
+  { href: '/refund-policy', label: 'Refund Policy' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/cookies-policy', label: 'Cookies Policy' },
+];
+
 const socials = [
   { href: 'https://www.facebook.com/rumeira', label: 'Facebook', icon: '/images/facebook-logo.svg' },
   { href: 'https://www.instagram.com/rumeira', label: 'Instagram', icon: '/images/instagram-logo.svg' },
@@ -86,7 +94,7 @@ const year = new Date().getFullYear();
             <ul class="mt-5 space-y-3">
               {c.links.map((l) => (
                 <li>
-                  <a href={l.href} class="text-sm text-white/75 transition-colors hover:text-gold">{l.label}</a>
+                  <a href={l.href} class="text-sm text-white transition-colors hover:text-gold">{l.label}</a>
                 </li>
               ))}
             </ul>
@@ -95,7 +103,7 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/80 md:flex-row ">
+    <div class="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white md:flex-row ">
       <div class="leading-relaxed">
         <p class="mb-2">Rumeira digital marketing, website design and software development in New York, Texas, Florida</p>
         <p>Rumeira is an exclusive digital marketing & web design company located in New York.</p>
@@ -104,6 +112,15 @@ const year = new Date().getFullYear();
       </div>
 
       <p>© {year} Rumeira. All rights reserved.</p>
+    </div>
+
+    <div class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 pt-6 text-xs text-white">
+      {legal.map((l, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true" class="h-2 w-px bg-white"></span>}
+          <a href={l.href} class="underline decoration-1 underline-offset-[6px] transition-colors hover:text-gold">{l.label}</a>
+        </>
+      ))}
     </div>
   </div>
 </footer>

@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Refund Policy — Rumeira"
+  description="Rumeira's refund policy for retainer-based digital marketing, website design, hosting, and software development services."
+  canonical="https://rumeira.com/refund-policy"
+>
+  <Nav />
+  <main id="main" class="pt-32 md:pt-40">
+    <section class="container-x pb-24 md:pb-32">
+      <header class="max-w-3xl">
+        <span class="eyebrow">Legal</span>
+        <h1 class="mt-4 text-4xl leading-[1.05] md:text-6xl">Refund Policy</h1>
+        <p class="mt-6 text-base md:text-lg">
+          <strong>Effective Date:</strong> January 1, 2023
+        </p>
+        <p class="mt-4 text-base md:text-lg">
+          At <strong>Rumeira</strong> (&ldquo;Company&rdquo;), we provide professional digital marketing, website design,
+          website hosting, and software development services. By engaging our services and submitting
+          payment, you acknowledge and agree to the terms of this Refund Policy.
+        </p>
+      </header>
+
+      <div class="legal-prose  max-w-3xl space-y-3 mt-6 text-base leading-relaxed">
+        <h2 class="!mt-5 text-2xl md:text-3xl">Retainer-Based Services</h2>
+        <p>
+          All services provided by Rumeira operate on a <strong>retainer basis</strong>. This ensures
+          dedicated resources, priority scheduling, and continuous strategy implementation for your
+          projects.
+        </p>
+        <ul class="list-disc pl-6">
+          <li>
+            <strong>Payment Requirement:</strong> Retainers must be paid in full prior to the commencement
+            of any work or the continuation of monthly service cycles.
+          </li>
+          <li>
+            <strong>Nature of Work:</strong> Because our services involve immediate allocation of labor,
+            intellectual property, and proprietary strategy, all payments are considered &ldquo;earned&rdquo;
+            upon receipt.
+          </li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">No Refunds</h2>
+        <p>
+          <strong>All Sales are Final.</strong> Unless explicitly stated otherwise in a separate, signed
+          Service Agreement:
+        </p>
+        <ul class="list-disc pl-6">
+          <li>
+            <strong>Service Delivery:</strong> We do not offer refunds for any payments made. This includes
+            initial setup fees, monthly retainer payments, and deposits.
+          </li>
+          <li>
+            <strong>Electronic Consumption:</strong> Due to the nature of digital services&mdash;where
+            insights, optimizations, and code are delivered and consumed in real-time&mdash;we cannot
+            &ldquo;reclaim&rdquo; the value provided once work has started.
+          </li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Cancellation of Services</h2>
+        <ul class="list-disc pl-6">
+          <li>
+            <strong>Notice Period:</strong> You may cancel your services at any time. To avoid future
+            charges, notice must be provided via email to
+            <a href="mailto:support@rumeira.com">support@rumeira.com</a>.
+          </li>
+          <li>
+            <strong>No Prorated Credits:</strong> Upon cancellation, any payment already processed for the
+            current billing cycle is non-refundable. We do not provide credits or prorated refunds for
+            unused days within a billing month.
+          </li>
+          <li>
+            <strong>Future Charges:</strong> Once a cancellation is confirmed, no further charges will be
+            applied to your account for subsequent billing periods.
+          </li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">No Guarantees</h2>
+        <p>
+          While we strive for excellence, Rumeira does not guarantee specific performance outcomes, such as
+          exact search engine rankings or specific traffic volumes. Digital performance is subject to
+          third-party algorithms and market variables beyond our control.
+        </p>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Disputes &amp; Chargebacks</h2>
+        <ul class="list-disc pl-6">
+          <li>
+            <strong>Payment Processing:</strong> We utilize secure processors (such as Stripe) to manage
+            transactions.
+          </li>
+          <li>
+            <strong>Dispute Resolution:</strong> In the event of a chargeback or payment dispute, Rumeira
+            reserves the right to submit comprehensive evidence of services rendered, including project
+            logs, communication records, and deliverables, to the financial institution.
+          </li>
+        </ul>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Policy Changes</h2>
+        <p>
+          Rumeira reserves the right to modify this policy at any time. Updated versions will be posted on
+          our website with a new Effective Date. Continued use of our services following an update
+          constitutes acceptance of the revised terms.
+        </p>
+
+        <h2 class="!mt-5 text-2xl md:text-3xl">Contact Us</h2>
+        <p>
+          If you have questions regarding your retainer or this policy, please reach out to our support team:
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:support@rumeira.com">support@rumeira.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-prose h2 {
+    color: #0a0a0a;
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 300;
+  }
+  .legal-prose a {
+    color: #987622;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .legal-prose a:hover {
+    color: #bc922c;
+  }
+</style>
