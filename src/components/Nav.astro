@@ -28,34 +28,36 @@ const solutions = [
       />
     </a>
 
-    <nav class="hidden items-center gap-9 md:flex" aria-label="Primary">
-      <div class="group relative">
-        <button
-          type="button"
-          class="flex items-center gap-1 text-sm text-ink/70 transition-colors hover:text-ink focus:text-ink focus:outline-none"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Solutions
-          <svg class="h-3 w-3 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-        <div class="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-          <div class="min-w-[14rem] rounded-2xl border border-black/10 bg-white py-2 shadow-lg">
-            {solutions.map((s) => (
-              <a href={s.href} class="block px-4 py-2 text-sm text-ink/70 transition-colors hover:bg-black/5 hover:text-ink">{s.label}</a>
-            ))}
+    <div class="hidden items-center gap-9 md:flex">
+      <nav class="flex items-center gap-9" aria-label="Primary">
+        <div class="group relative">
+          <button
+            type="button"
+            class="flex items-center gap-1 text-sm text-ink/70 transition-colors hover:text-ink focus:text-ink focus:outline-none"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Solutions
+            <svg class="h-3 w-3 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div class="min-w-[14rem] rounded-2xl border border-black/10 bg-white py-2 shadow-lg">
+              {solutions.map((s) => (
+                <a href={s.href} class="block px-4 py-2 text-sm text-ink/70 transition-colors hover:bg-black/5 hover:text-ink">{s.label}</a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      {links.map((l) => (
-        <a href={l.href} class="text-sm text-ink/70 transition-colors hover:text-ink">{l.label}</a>
-      ))}
-    </nav>
-    <a href="#cta" class="hidden rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-gold hover:text-gold md:inline-flex">
-      Book a call
-    </a>
+        {links.map((l) => (
+          <a href={l.href} class="text-sm text-ink/70 transition-colors hover:text-ink">{l.label}</a>
+        ))}
+      </nav>
+      <a href="#cta" class="rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-gold hover:text-gold">
+        Book a call
+      </a>
+    </div>
   </div>
 </header>
 
