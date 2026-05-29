@@ -1,0 +1,72 @@
+---
+const pains = [
+  {
+    title: 'Channels run in silos.',
+    body: 'SEO doesn\'t talk to paid. Paid doesn\'t talk to email. Each agency owns a slice and nobody owns the funnel - so spend stacks up and the pipeline stays flat.',
+  },
+  {
+    title: 'Traffic without intent.',
+    body: 'You\'re ranking, you\'re running ads, you\'re posting content - and none of it brings the buyer you actually want. Volume without targeting is just expensive noise.',
+  },
+  {
+    title: 'No measurement spine.',
+    body: 'Reports look great until you ask which dollar drove which lead. Without attribution, every channel claims the credit and nothing gets cut.',
+  },
+  {
+    title: 'AI search is rewriting the rules.',
+    body: 'Google AI Overviews, ChatGPT, Perplexity - the buyer\'s first answer is no longer your homepage. Most brands have no plan for the channel that is eating organic.',
+  },
+];
+---
+
+<section class="bg-white py-24 md:py-36">
+  <div class="container-x">
+    <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+      <div class="flex flex-col gap-8 lg:sticky lg:top-28 lg:self-start">
+        <span class="eyebrow">
+          <span class="h-px w-6 bg-gold"></span>
+          The real problem
+        </span>
+        <h2 class="font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-[3.25rem]">
+          Most marketing stalls for the same four reasons.
+        </h2>
+
+        <p class="text-lg font-semibold text-ink md:text-xl">
+          Marketing's job isn't traffic. It's qualified pipeline.
+        </p>
+
+        <p class="text-base leading-relaxed text-ink/65 md:text-lg">
+          The market is full of agencies selling one channel as the whole answer. We build the system underneath, the part that turns paid, organic, content, and lifecycle into one coherent growth engine.
+        </p>
+
+        <blockquote class="relative rounded-2xl border border-black/10 bg-[#FBF8EF] p-8 md:p-10">
+          <span class="pointer-events-none absolute -top-4 left-8 font-display text-7xl leading-none text-gold/20 select-none">&ldquo;</span>
+          <p class="relative text-base leading-relaxed text-ink md:text-lg">
+            A campaign that wins clicks but loses revenue is a failed campaign. We design every channel around one question: <span class="font-semibold text-ink">does this move someone closer to a buying decision?</span>
+          </p>
+          <footer class="mt-6 flex items-center gap-4">
+            <span class="h-px w-8 bg-gold"></span>
+            <div>
+              <div class="text-sm font-semibold text-ink">Jack He</div>
+              <div class="text-xs text-ink/50">Owner, Rumeira</div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        {pains.map((p, i) => (
+          <article class="group rounded-2xl border border-black/10 bg-white p-7 transition-colors duration-300 hover:border-gold/40 md:p-9">
+            <div class="flex items-start gap-5">
+              <span class="font-display text-sm font-medium text-gold">{String(i + 1).padStart(2, '0')}</span>
+              <div class="flex-1">
+                <h3 class="font-display text-xl font-medium leading-tight md:text-2xl">{p.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-ink/65 md:text-lg">{p.body}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

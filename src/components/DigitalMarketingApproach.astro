@@ -1,0 +1,77 @@
+---
+const pillars = [
+  {
+    n: '01',
+    title: 'Funnel-first strategy',
+    summary: 'We map the buyer journey before we touch a channel. Awareness, intent, decision, retention - each stage gets its own play, its own metric, its own owner.',
+    items: ['Buyer intent mapping', 'Channel-to-stage matching', 'Offer architecture per stage', 'Pipeline targets, not vanity goals'],
+  },
+  {
+    n: '02',
+    title: 'Integrated channel mix',
+    summary: 'SEO, paid, content, and lifecycle managed as one engine. Insights from search inform ads. Email feeds retargeting. Nothing runs in a silo.',
+    items: ['Search, paid, content, lifecycle', 'Shared creative and messaging', 'Unified audiences across platforms', 'Weekly cross-channel reviews'],
+  },
+  {
+    n: '03',
+    title: 'AI search visibility',
+    summary: 'Generative Engine Optimization built into every page and asset. We earn the answer slot in ChatGPT, Perplexity, and Google AI Overviews, not just blue links.',
+    items: ['GEO-ready content structure', 'Schema and entity optimization', 'Answer engine monitoring', 'AI citation tracking'],
+  },
+  {
+    n: '04',
+    title: 'Attribution that holds up',
+    summary: 'A measurement spine that survives iOS, cookie deprecation, and dashboard theatre. You know which channel earned the lead and which one just took credit.',
+    items: ['Server-side tracking setup', 'Multi-touch attribution model', 'CRM-to-spend reconciliation', 'Monthly P&L on growth spend'],
+  },
+];
+---
+
+<section id="approach" class="bg-[#FBF8EF] py-24 md:py-36">
+  <div class="container-x">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div class="max-w-2xl">
+        <span class="eyebrow">
+          <span class="h-px w-6 bg-gold"></span>
+          The Approach
+        </span>
+        <h2 class="mt-5 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
+          Four pillars.<br/>
+          <span class="text-gold">One growth engine.</span>
+        </h2>
+      </div>
+      <p class="max-w-md text-base text-ink/60 md:text-lg">
+        We don't sell channels, we ship systems. Every program we run is engineered against the same four pillars, regardless of industry or stage.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 md:grid-cols-2">
+      {pillars.map((p) => (
+        <article class="group relative flex flex-col bg-white p-8 transition-colors duration-500 hover:bg-gold/[0.03] md:p-10">
+          <div class="flex items-center justify-between">
+            <span class="font-display text-sm font-medium text-gold">{p.n}</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-ink/15 transition-colors group-hover:bg-gold"></span>
+          </div>
+
+          <h3 class="mt-10 font-display text-2xl font-medium leading-tight md:text-3xl">
+            {p.title}
+          </h3>
+          <p class="mt-4 text-sm leading-relaxed text-ink/65 md:text-base">
+            {p.summary}
+          </p>
+
+          <ul class="mt-8 space-y-3 border-t border-black/10 pt-6">
+            {p.items.map((item) => (
+              <li class="flex items-start gap-3 text-md text-ink/75">
+                <svg class="mt-1 h-3 w-3 flex-none text-gold" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 6.5L5 9.5L10 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

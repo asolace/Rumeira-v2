@@ -1,0 +1,115 @@
+---
+const channels = [
+  {
+    slug: 'seo',
+    name: 'SEO & GEO',
+    role: 'Organic + AI search',
+    summary: 'Win the answer slot in Google and the citation in ChatGPT. Technical SEO, content engineered for intent, and Generative Engine Optimization built in from day one.',
+    deliverables: [
+      'Technical audit and rebuild',
+      'Topical authority mapping',
+      'Programmatic content systems',
+      'GEO and AI citation tracking',
+    ],
+    metric: '+212% organic sessions',
+  },
+  {
+    slug: 'paid',
+    name: 'Paid Acquisition',
+    role: 'Google, Meta, LinkedIn',
+    summary: 'Performance media run against a CAC target, not an impression goal. We launch fast, kill what stalls, and scale what compounds.',
+    deliverables: [
+      'Account architecture rebuild',
+      'Creative testing pipeline',
+      'Server-side conversion tracking',
+      'Weekly spend reallocation',
+    ],
+    metric: '3.4x ROAS in 90 days',
+  },
+  {
+    slug: 'content',
+    name: 'Content & Creative',
+    role: 'Copy, video, design',
+    summary: 'Content built as a sales asset, not a calendar item. Each piece earns its place in the funnel with copy that converts, not copy that fills space.',
+    deliverables: [
+      'Buyer-intent content briefs',
+      'Short-form video systems',
+      'Landing page production',
+      'Sales enablement assets',
+    ],
+    metric: '4x qualified lead volume',
+  },
+  {
+    slug: 'lifecycle',
+    name: 'Lifecycle & Retention',
+    role: 'Email, SMS, automation',
+    summary: 'The cheapest revenue you have is the customer you already won. We build the flows, segments, and triggers that turn one purchase into a relationship.',
+    deliverables: [
+      'Flow and segmentation strategy',
+      'Onboarding and reactivation',
+      'Retention and winback automation',
+      'LTV cohort reporting',
+    ],
+    metric: '38% revenue from owned channels',
+  },
+];
+---
+
+<section id="channels" class="bg-white py-24 md:py-36">
+  <div class="container-x">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div class="max-w-2xl">
+        <span class="eyebrow">
+          <span class="h-px w-6 bg-gold"></span>
+          Channels
+        </span>
+        <h2 class="mt-5 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
+          Four channels.<br/>
+          <span class="text-gold">One coordinated motion.</span>
+        </h2>
+      </div>
+      <p class="max-w-md text-base text-ink/60 md:text-lg">
+        Every channel below is run by the same team, against the same pipeline target. No handoffs, no finger-pointing, no channel that only optimises for itself.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-6 lg:grid-cols-2">
+      {channels.map((c, i) => (
+        <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white p-8 transition-all duration-300 hover:border-gold/40 hover:shadow-[0_30px_80px_-30px_rgba(152,118,34,0.18)] md:p-10">
+          <div class="flex items-start justify-between gap-6">
+            <div>
+              <span class="font-display text-sm font-medium text-gold">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="mt-6 font-display text-2xl font-medium leading-tight md:text-3xl">{c.name}</h3>
+              <div class="mt-2 text-xs uppercase tracking-[0.18em] text-ink/40">{c.role}</div>
+            </div>
+            <span class="mt-1 flex h-9 w-9 flex-none items-center justify-center rounded-full border border-black/10 text-ink/40 transition-all group-hover:border-gold group-hover:bg-gold group-hover:text-white">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M1 6h10m0 0L6 1m5 5L6 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+
+          <p class="mt-6 text-base leading-relaxed text-ink/65 md:text-lg">
+            {c.summary}
+          </p>
+
+          <ul class="mt-8 grid gap-3 border-t border-black/10 pt-6 sm:grid-cols-2">
+            {c.deliverables.map((item) => (
+              <li class="flex items-start gap-3 text-sm text-ink/75">
+                <svg class="mt-1 h-3 w-3 flex-none text-gold" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 6.5L5 9.5L10 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-gold">
+            <span class="h-px w-4 bg-gold"></span>
+            {c.metric}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,414 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+
+// -----------------------------------------------------------------------------
+// Image assets expected at /public/images/projects/strictly-junk-removal/
+// Drop the files in and they will render automatically.
+//
+//   thumbnail.webp             - used by the digital-marketing results grid (1200x900)
+//   logo.webp                  - client logo (transparent, ~800x300)
+//   hero.webp                  - business hero/homepage screenshot
+//   ranking-improvements.webp  - overall ranking improvement chart
+//   gsc-clicks-impressions.webp - Google Search Console clicks/impressions graph
+//   chatgpt-ranking.webp       - ChatGPT search ranking screenshot
+//   keyword-list.webp          - long list of ranking keywords
+// -----------------------------------------------------------------------------
+
+const meta = [
+  { k: 'Client', v: 'Strictly Junk Removal' },
+  { k: 'Industry', v: 'Junk Removal · NYC' },
+  { k: 'Engagement', v: 'Jul 2023 - present' },
+  {
+    k: 'What we did',
+    items: [
+      'Research & Planning',
+      'Local SEO',
+      'Content Strategy',
+      'On-Page SEO',
+      'Analytics',
+      'SEO Audits',
+      'Technical SEO',
+      'Link Building',
+      'Keyword Research',
+      'Conversion Tracking',
+    ],
+  },
+];
+
+const sixMonthWins = [
+  {
+    metric: 'Page 1',
+    label: 'Multiple strategic keywords ranked',
+    note: 'Junk removal terms across Brooklyn and Queens, NY in under 6 months.',
+  },
+  {
+    metric: 'Visibility',
+    label: 'Step-change lift',
+    note: 'Domain visibility climbed sharply as new pages were indexed and authority compounded.',
+  },
+  {
+    metric: 'Foundations',
+    label: 'Tracking + technical SEO live',
+    note: 'GA4, GSC, conversion events, and a clean technical baseline in the first sprint.',
+  },
+];
+
+const twelveMonthWins = [
+  {
+    metric: '20+',
+    label: 'Keywords ranked top 10',
+    note: 'Including the primary commercial keywords driving inbound junk-removal inquiries.',
+  },
+  {
+    metric: '+10',
+    label: 'Domain authority points',
+    note: 'Outpacing direct competitors in the NYC junk-removal space.',
+  },
+  {
+    metric: 'Top 3',
+    label: 'ChatGPT search position',
+    note: 'Cited as a top answer for relevant junk removal queries in generative search.',
+  },
+];
+
+const proof = [
+  {
+    img: '/images/projects/strictly-junk-removal/ranking-improvements.webp',
+    title: 'Overall ranking improvements',
+    caption: 'Keyword positions climbing across the tracked basket through the first 12 months.',
+  },
+  {
+    img: '/images/projects/strictly-junk-removal/gsc-clicks-impressions.webp',
+    title: 'Google Search Console growth',
+    caption: 'Clicks and impressions compounding as content and authority caught up to intent.',
+  },
+  {
+    img: '/images/projects/strictly-junk-removal/keyword-list.webp',
+    title: 'Ranking keyword inventory',
+    caption: 'The long list of commercial and local terms now driving qualified search traffic.',
+  },
+  {
+    img: '/images/projects/strictly-junk-removal/chatgpt-ranking.webp',
+    title: 'Top 3 in ChatGPT search',
+    caption: 'Cited as a primary answer for relevant junk removal queries in generative search.',
+  },
+];
+
+// Other case studies shown at the bottom (excludes the current project).
+const featured: Array<{
+  slug?: string;
+  name?: string;
+  category?: string;
+  result?: string;
+  thumbnail?: string;
+  href?: string;
+  placeholder?: boolean;
+}> = [
+  { placeholder: true, category: 'Case study' },
+  { placeholder: true, category: 'Case study' },
+  { placeholder: true, category: 'Case study' },
+];
+---
+
+<BaseLayout
+  title="Strictly Junk Removal | SEO Case Study · Rumeira"
+  description="How Rumeira ranked Strictly Junk Removal on Page 1 of Google for multiple high-intent keywords in under 6 months, then earned a top 3 ChatGPT citation within 12 months."
+  canonical="https://rumeira.com/digital-marketing-project/strictly-junk-removal"
+>
+  <Nav />
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="relative overflow-hidden bg-white pt-32 pb-16 md:pt-40 md:pb-20">
+      <div class="pointer-events-none absolute inset-0 bg-grid-light opacity-60 [mask-image:radial-gradient(ellipse_at_top_left,black_20%,transparent_70%)]"></div>
+      <div class="pointer-events-none absolute -top-32 left-[-10%] h-[560px] w-[560px] rounded-full bg-gold/15 blur-3xl"></div>
+
+      <div class="container-x relative">
+        <a href="/digital-marketing" class="inline-flex items-center gap-2 text-sm text-ink/50 transition-colors hover:text-gold">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M11 6H1m0 0l5-5M1 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All case studies
+        </a>
+
+        <div class="mt-8 grid items-end gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-8">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              Digital Marketing · SEO Case Study
+            </span>
+            <h1 class="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tightest text-ink sm:text-6xl md:text-7xl">
+              Strictly Junk Removal
+            </h1>
+            <p class="mt-7 max-w-2xl text-balance text-lg leading-relaxed text-ink/65 md:text-xl">
+              A new website paired with a full SEO program took a Brooklyn-based junk removal company to <span class="font-medium text-ink">Page 1 of Google</span> for multiple high-intent keywords in <span class="font-medium text-ink">under 6 months</span>.
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 text-right">
+            <a href="https://strictlyjunkremoval.com" target="_blank" rel="noopener" class="btn-primary w-full sm:w-auto">
+              Visit live site
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M5 9L9 5M9 5H5M9 5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="1.5" y="1.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-14 grid grid-cols-2 gap-6 border-t border-black/10 pt-8 md:grid-cols-4">
+          {meta.map((m) => (
+            <div>
+              <div class="text-xs uppercase tracking-[0.2em] text-ink/70">{m.k}</div>
+              {m.items ? (
+                <ul class="mt-2 flex flex-wrap gap-1.5">
+                  {m.items.map((item) => (
+                    <li class="rounded-full bg-ink/[0.06] px-2.5 py-1 text-xs font-medium text-ink/80">{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <div class="mt-2 text-sm font-medium text-ink">{m.v}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HERO IMAGE ========== -->
+    <section class="bg-white pb-16 md:pb-24">
+      <div class="container-x">
+        <figure class="overflow-hidden rounded-3xl border border-black/10 bg-[#F3F4F6] shadow-[0_40px_120px_-50px_rgba(0,0,0,0.35)]">
+          <img
+            src="/images/projects/strictly-junk-removal/hero.webp"
+            alt="Strictly Junk Removal homepage hero"
+            width="1600"
+            height="1000"
+            class="block w-full h-auto"
+            loading="eager"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT THE CLIENT ========== -->
+    <section class="bg-white py-20 md:py-28">
+      <div class="container-x">
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              About the client
+            </span>
+            <h2 class="mt-5 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-5xl">
+              A Brooklyn junk removal team serving all five boroughs.
+            </h2>
+          </div>
+          <div class="space-y-6 text-base leading-relaxed text-ink/70 md:text-lg lg:col-span-7">
+            <p>
+              Strictly Junk Removal is a Brooklyn-based company offering junk and debris removal services across New York City. After we built their new website, the next question was the obvious one: <span class="font-medium text-ink">how do we get found?</span>
+            </p>
+            <p>
+              In <span class="font-medium text-ink">July 2023</span> we kicked off a comprehensive SEO program spanning research and planning, local SEO, content strategy, on-page SEO, analytics, SEO audits, technical SEO, link building, and keyword research, all measured against ranking and conversion targets, not vanity traffic.
+            </p>
+            <div class="grid grid-cols-3 gap-4 border-t border-black/10 pt-6">
+              <div>
+                <div class="font-display text-2xl font-medium text-ink md:text-3xl">5<span class="text-gold">+</span></div>
+                <div class="mt-1 text-xs uppercase tracking-[0.18em] text-ink/40">NYC boroughs</div>
+              </div>
+              <div>
+                <div class="font-display text-2xl font-medium text-ink md:text-3xl">Local<span class="text-gold">-first</span></div>
+                <div class="mt-1 text-xs uppercase tracking-[0.18em] text-ink/40">Search strategy</div>
+              </div>
+              <div>
+                <div class="font-display text-2xl font-medium text-ink md:text-3xl">Jul<span class="text-gold"> '23</span></div>
+                <div class="mt-1 text-xs uppercase tracking-[0.18em] text-ink/40">Engagement start</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 6 MONTH RESULTS ========== -->
+    <section class="bg-[#FBF8EF] py-20 md:py-28">
+      <div class="container-x">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              Results · 6 months in
+            </span>
+            <h2 class="mt-5 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-5xl">
+              Page 1 inside<br/>
+              <span class="text-gold">half a year.</span>
+            </h2>
+          </div>
+          <p class="max-w-md text-base text-ink/60 md:text-lg">
+            Despite the program being in its infancy, we hit early visibility and ranking milestones in the first two quarters.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 md:grid-cols-3">
+          {sixMonthWins.map((w) => (
+            <article class="flex flex-col bg-white p-8 md:p-10">
+              <div class="font-display text-3xl font-medium text-gold md:text-4xl">{w.metric}</div>
+              <div class="mt-3 font-display text-lg font-medium text-ink md:text-xl">{w.label}</div>
+              <p class="mt-4 text-sm leading-relaxed text-ink/65 md:text-base">{w.note}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 12 MONTH RESULTS ========== -->
+    <section class="bg-white py-20 md:py-28">
+      <div class="container-x">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              Results · 12 months in
+            </span>
+            <h2 class="mt-5 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-5xl">
+              Twelve months,<br/>
+              <span class="text-gold">compounding.</span>
+            </h2>
+          </div>
+          <p class="max-w-md text-base text-ink/60 md:text-lg">
+            By month twelve, the program was producing layered wins across classic search, authority, and AI search.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 md:grid-cols-3">
+          {twelveMonthWins.map((w) => (
+            <article class="flex flex-col bg-white p-8 md:p-10">
+              <div class="font-display text-3xl font-medium text-gold md:text-4xl">{w.metric}</div>
+              <div class="mt-3 font-display text-lg font-medium text-ink md:text-xl">{w.label}</div>
+              <p class="mt-4 text-sm leading-relaxed text-ink/65 md:text-base">{w.note}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== VISUAL PROOF ========== -->
+    <section class="bg-[#FBF8EF] py-20 md:py-28">
+      <div class="container-x">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              The receipts
+            </span>
+            <h2 class="mt-5 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-5xl">
+              Numbers, not narratives.
+            </h2>
+          </div>
+          <p class="max-w-md text-base text-ink/60 md:text-lg">
+            The screenshots below are pulled directly from Google Search Console, third-party ranking trackers, and live ChatGPT results.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-8 md:grid-cols-2">
+          {proof.map((p) => (
+            <figure class="overflow-hidden rounded-2xl border border-black/10 bg-white">
+              <div class="bg-[#F3F4F6]">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  width="1200"
+                  height="800"
+                  class="block w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="border-t border-black/10 p-6">
+                <div class="font-display text-base font-medium text-ink md:text-lg">{p.title}</div>
+                <p class="mt-2 text-sm leading-relaxed text-ink/60">{p.caption}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== OTHER CASE STUDIES ========== -->
+    <section class="bg-white py-20 md:py-28">
+      <div class="container-x">
+        <div class="flex flex-col items-start justify-between gap-6 border-t border-black/10 pt-12 sm:flex-row sm:items-end">
+          <div class="max-w-2xl">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              Other case studies
+            </span>
+            <h2 class="mt-5 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-5xl">
+              More work,<br/>
+              <span class="text-gold">same engine.</span>
+            </h2>
+          </div>
+          <a href="/digital-marketing" class="group inline-flex flex-none items-center gap-2 text-sm font-medium text-ink/70 transition-colors hover:text-gold">
+            Back to Digital Marketing
+            <span class="flex h-7 w-7 items-center justify-center rounded-full border border-black/10 transition-all group-hover:border-gold group-hover:bg-gold group-hover:text-white">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M1 6h10m0 0L6 1m5 5L6 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((p) => p.placeholder ? (
+            <div class="relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-black/15 bg-[#FBF8EF]/40">
+              <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-ink/[0.04] to-ink/[0.02]">
+                <div class="flex h-full items-center justify-center text-xs uppercase tracking-[0.18em] text-ink/30">
+                  Coming soon
+                </div>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="font-display text-xl font-medium leading-tight text-ink/40">New case study shipping soon</h3>
+                <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink/30">
+                  <span class="h-px w-4 bg-ink/20"></span>
+                  {p.category}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a href={p.href ?? `/digital-marketing-project/${p.slug}`} class="group relative flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white transition-all duration-300 hover:border-gold/40 hover:shadow-[0_30px_80px_-30px_rgba(152,118,34,0.25)]">
+              <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-ink/[0.04] to-ink/[0.02]">
+                {p.thumbnail ? (
+                  <img src={p.thumbnail} alt={p.name} width="800" height="600" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+                ) : (
+                  <div class="flex h-full items-center justify-center text-xs uppercase tracking-[0.18em] text-ink/30">Preview</div>
+                )}
+                <span class="absolute left-4 top-4 rounded-full bg-gold text-white px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-ink/70 backdrop-blur">
+                  {p.category}
+                </span>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <div class="flex items-start justify-between gap-4">
+                  <h3 class="font-display text-xl font-medium leading-tight">{p.name}</h3>
+                  <span class="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full border border-black/10 text-ink/40 transition-all group-hover:border-gold group-hover:bg-gold group-hover:text-white">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                      <path d="M1 6h10m0 0L6 1m5 5L6 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-gold">
+                  <span class="h-px w-4 bg-gold"></span>
+                  {p.result}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>

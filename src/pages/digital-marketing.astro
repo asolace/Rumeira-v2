@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import DigitalMarketingHero from '../components/DigitalMarketingHero.astro';
+import DigitalMarketingProblem from '../components/DigitalMarketingProblem.astro';
+import DigitalMarketingApproach from '../components/DigitalMarketingApproach.astro';
+import DigitalMarketingChannels from '../components/DigitalMarketingChannels.astro';
+import DigitalMarketingResults from '../components/DigitalMarketingResults.astro';
+import DigitalMarketingProcess from '../components/DigitalMarketingProcess.astro';
+import DigitalMarketingFAQ from '../components/DigitalMarketingFAQ.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Digital Marketing | Rumeira"
+  description="Full-funnel digital marketing engineered as one growth system. Search, paid, content, and lifecycle run by one team, against one pipeline target, with AI search visibility built in."
+  canonical="https://rumeira.com/digital-marketing"
+>
+  <Nav />
+  <main id="main">
+    <DigitalMarketingHero />
+    <DigitalMarketingProblem />
+    <DigitalMarketingApproach />
+    <DigitalMarketingChannels />
+    <DigitalMarketingResults />
+    <DigitalMarketingProcess />
+    <DigitalMarketingFAQ />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>
