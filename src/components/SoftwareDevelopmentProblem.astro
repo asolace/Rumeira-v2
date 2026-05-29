@@ -1,0 +1,72 @@
+---
+const pains = [
+  {
+    title: 'You wait quarters for features you needed yesterday.',
+    body: 'Every SaaS roadmap runs on someone else\'s calendar. When you need a small change to fit how your team works, you submit a feature request and get added to a queue behind ten thousand other customers -or you never hear back at all.',
+  },
+  {
+    title: 'The update shipped. Just not the one you asked for.',
+    body: 'Vendor product teams build for the median customer, not for you. Even when an update lands, it\'s rarely what you actually wanted, and the old workaround stays in place because rebuilding around the new feature isn\'t worth the disruption.',
+  },
+  {
+    title: 'Your team fights the tool, not the work.',
+    body: 'Off-the-shelf platforms force every customer through the same screens, the same flows, and the same vocabulary. Your team spends real hours every week translating their actual job into a UI that was not built for them.',
+  },
+  {
+    title: 'Your software is frozen. Your business isn\'t.',
+    body: 'A static tool is a tax that compounds. As your team grows, your processes evolve, and your needs shift, the gap between what the software does and what you need it to do gets wider every quarter.',
+  },
+];
+---
+
+<section class="bg-white py-24 md:py-36">
+  <div class="container-x">
+    <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+      <div class="flex flex-col gap-8 lg:sticky lg:top-28 lg:self-start">
+        <span class="eyebrow">
+          <span class="h-px w-6 bg-gold"></span>
+          The real problem
+        </span>
+        <h2 class="font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-[3.25rem]">
+          Most teams outgrow their software for the same four reasons.
+        </h2>
+
+        <p class="text-lg font-semibold text-ink md:text-xl">
+          Internal software's job isn't features. It's flow.
+        </p>
+
+        <p class="text-base leading-relaxed text-ink/65 md:text-lg">
+          The market is full of SaaS platforms selling features dressed up as a solution. We build the layer underneath, the part shaped to how your team actually operates -not how a generic product roadmap assumes it does.
+        </p>
+
+        <blockquote class="relative rounded-2xl border border-black/10 bg-[#FBF8EF] p-8 md:p-10">
+          <span class="pointer-events-none absolute -top-4 left-8 font-display text-7xl leading-none text-gold/20 select-none">&ldquo;</span>
+          <p class="relative text-base leading-relaxed text-ink md:text-lg">
+            A tool that ships features but loses adoption is a failed tool. We design every workflow around one question: <span class="font-semibold text-ink">does this make the daily job faster, or just different?</span>
+          </p>
+          <footer class="mt-6 flex items-center gap-4">
+            <span class="h-px w-8 bg-gold"></span>
+            <div>
+              <div class="text-sm font-semibold text-ink">Jack He</div>
+              <div class="text-xs text-ink/50">Owner, Rumeira</div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        {pains.map((p, i) => (
+          <article class="group rounded-2xl border border-black/10 bg-white p-7 transition-colors duration-300 hover:border-gold/40 md:p-9">
+            <div class="flex items-start gap-5">
+              <span class="font-display text-sm font-medium text-gold">{String(i + 1).padStart(2, '0')}</span>
+              <div class="flex-1">
+                <h3 class="font-display text-xl font-medium leading-tight md:text-2xl">{p.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-ink/65 md:text-lg">{p.body}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

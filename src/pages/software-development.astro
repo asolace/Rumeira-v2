@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import SoftwareDevelopmentHero from '../components/SoftwareDevelopmentHero.astro';
+import SoftwareDevelopmentProblem from '../components/SoftwareDevelopmentProblem.astro';
+import SoftwareDevelopmentApproach from '../components/SoftwareDevelopmentApproach.astro';
+import SoftwareDevelopmentProjects from '../components/SoftwareDevelopmentProjects.astro';
+import SoftwareDevelopmentProcess from '../components/SoftwareDevelopmentProcess.astro';
+import SoftwareDevelopmentFAQ from '../components/SoftwareDevelopmentFAQ.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Software Development | Rumeira"
+  description="Custom internal web apps that replace the spreadsheets, shared docs, and stitched-together SaaS your team has outgrown. Project management, CRMs, and workflow tools built for how your business actually runs."
+  canonical="https://rumeira.com/software-development"
+>
+  <Nav />
+  <main id="main">
+    <SoftwareDevelopmentHero />
+    <SoftwareDevelopmentProblem />
+    <SoftwareDevelopmentApproach />
+    <SoftwareDevelopmentProjects />
+    <SoftwareDevelopmentProcess />
+    <SoftwareDevelopmentFAQ />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>
