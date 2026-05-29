@@ -11,6 +11,7 @@ import Footer from '../../components/Footer.astro';
 //   thumbnail.webp             - used by the digital-marketing results grid (1200x900)
 //   logo.webp                  - client logo (transparent, ~800x300)
 //   hero.webp                  - business hero/homepage screenshot
+//   local-heatmap.webp         - local-pack heatmap, 2080x1292 (data + legend baked in)
 //   ranking-improvements.webp  - overall ranking improvement chart
 //   gsc-clicks-impressions.webp - Google Search Console clicks/impressions graph
 //   chatgpt-ranking.webp       - ChatGPT search ranking screenshot
@@ -228,6 +229,70 @@ const featured: Array<{
                 <div class="mt-1 text-xs uppercase tracking-[0.18em] text-ink/40">Engagement start</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LOCAL HEATMAP -the headline result for a local business ========== -->
+    <section class="bg-white pb-20 md:pb-28">
+      <div class="container-x">
+        <div class="overflow-hidden rounded-3xl border border-black/10 bg-[#FBF8EF]">
+
+          <!-- Header strip -->
+          <div class="flex flex-col items-start justify-between gap-5 p-8 md:flex-row md:items-end md:p-12">
+            <div class="max-w-2xl">
+              <span class="eyebrow">
+                <span class="h-px w-6 bg-gold"></span>
+                Local visibility · The headline result
+              </span>
+              <h2 class="mt-5 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-4xl lg:text-5xl">
+                Owning the map <span class="text-gold">across Brooklyn.</span>
+              </h2>
+            </div>
+            <p class="max-w-md text-base text-ink/60 md:text-lg">
+              Brooklyn junk removal is one of the most contested local search markets in the country. We tracked a <span class="font-medium text-ink">12.57 sq mi</span> grid around the business and measured map-pack position at every node.
+            </p>
+          </div>
+
+          <!-- Heatmap image -full bleed inside the card -->
+          <div class="bg-white">
+            <figure class="overflow-hidden bg-white">
+              <img
+                src="/images/projects/strictly-junk-removal/local-heatmap.webp"
+                alt="Local pack ranking heatmap for Strictly Junk Removal across a 12.57 square mile area in Brooklyn, NY"
+                width="2080"
+                height="1292"
+                class="block h-auto w-full"
+                loading="eager"
+              />
+            </figure>
+          </div>
+
+          <!-- Stat row + caption -->
+          <div class="p-8 md:p-12">
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="rounded-2xl border border-black/10 bg-white p-6">
+                <div class="font-display text-3xl font-medium text-gold md:text-4xl">61%</div>
+                <div class="mt-2 text-xs uppercase tracking-[0.18em] text-ink/50">Grid in top 3</div>
+              </div>
+              <div class="rounded-2xl border border-black/10 bg-white p-6">
+                <div class="font-display text-3xl font-medium text-gold md:text-4xl">32%</div>
+                <div class="mt-2 text-xs uppercase tracking-[0.18em] text-ink/50">Grid in top 7</div>
+              </div>
+              <div class="rounded-2xl border border-black/10 bg-white p-6">
+                <div class="font-display text-3xl font-medium text-ink md:text-4xl">12.57<span class="text-gold text-xl md:text-2xl"> mi²</span></div>
+                <div class="mt-2 text-xs uppercase tracking-[0.18em] text-ink/50">Tracked area</div>
+              </div>
+              <div class="rounded-2xl border border-black/10 bg-white p-6">
+                <div class="font-display text-3xl font-medium text-ink md:text-4xl">93%</div>
+                <div class="mt-2 text-xs uppercase tracking-[0.18em] text-ink/50">In top 7 combined</div>
+              </div>
+            </div>
+
+            <p class="mt-8 max-w-3xl text-sm leading-relaxed text-ink/55 md:text-base">
+              Read the green and yellow zones as the calls coming in. The deeper the color, the higher the map-pack rank when a Brooklyn customer searches "junk removal near me" from that block.
+            </p>
           </div>
         </div>
       </div>
