@@ -1,11 +1,11 @@
 ---
-title: "Why on-page SEO matters more in the AI search era"
-description: "Generative search rewards the same things classic SEO always did: clear structure, real expertise, and pages that answer the actual question. Here's how to make a page both rank and get cited."
+title: "Our process for a website redesign that converts"
+description: "The playbook behind every website we redesign: brand audit, competitor research, keyword strategy, conversion-driven layout, and analytics from day one."
 publishedAt: 2026-05-22
-tags: [SEO, AI]
+tags: [Website, SEO]
 author: Rumeira
 coverImage: /images/blog/our-process-for-a-website-redesign-that-converts/cover.webp
-coverImageAlt: A search results page with AI-generated answer block above traditional blue links.
+coverImageAlt: Rumeira's logo
 featured: true
 ---
 
