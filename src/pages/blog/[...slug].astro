@@ -16,7 +16,8 @@ export async function getStaticPaths() {
 
 type Props = { post: CollectionEntry<'blog'> };
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const tocHeadings = headings.filter((h) => h.depth === 2);
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const related = allPosts
@@ -106,8 +107,29 @@ const canonical = `https://rumeira.com/blog/${post.id}`;
       <!-- ========== ARTICLE BODY ========== -->
       <section class="bg-white pb-24 md:pb-32">
         <div class="container-x">
-          <div class="mx-auto max-w-3xl prose-rumeira">
-            <Content />
+          <div class="mx-auto max-w-3xl lg:flex lg:max-w-5xl lg:gap-12 xl:gap-16">
+            {tocHeadings.length > 0 && (
+              <aside class="hidden lg:block lg:w-52 lg:flex-none">
+                <nav class="sticky top-28" aria-label="Table of contents">
+                  <div class="text-xs uppercase tracking-[0.2em] text-ink/40">On this page</div>
+                  <ul class="mt-5 space-y-1 border-l border-black/10">
+                    {tocHeadings.map((h) => (
+                      <li>
+                        <a
+                          href={`#${h.slug}`}
+                          class="block -ml-px border-l-2 border-transparent py-1.5 pl-4 text-sm leading-snug text-ink/55 transition-colors hover:border-gold hover:text-ink"
+                        >
+                          {h.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </aside>
+            )}
+            <div class="prose-rumeira lg:flex-1 lg:max-w-3xl">
+              <Content />
+            </div>
           </div>
         </div>
       </section>
@@ -196,6 +218,7 @@ const canonical = `https://rumeira.com/blog/${post.id}`;
     line-height: 1.75;
   }
   .prose-rumeira > * + * { margin-top: 1.5rem; }
+  html { scroll-behavior: smooth; }
   .prose-rumeira h2 {
     font-family: var(--font-display, 'Clash Display', system-ui, sans-serif);
     font-weight: 500;
@@ -205,6 +228,7 @@ const canonical = `https://rumeira.com/blog/${post.id}`;
     letter-spacing: -0.02em;
     margin-top: 3.5rem;
     margin-bottom: 1.25rem;
+    scroll-margin-top: 6rem;
   }
   .prose-rumeira h3 {
     font-family: var(--font-display, 'Clash Display', system-ui, sans-serif);
