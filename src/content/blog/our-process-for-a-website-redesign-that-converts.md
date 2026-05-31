@@ -1,11 +1,11 @@
 ---
 title: "Our process for a website redesign that converts"
 description: "The playbook behind every website we redesign: brand audit, competitor research, keyword strategy, conversion-driven layout, and analytics from day one."
-publishedAt: 2026-05-22
+publishedAt: 2026-04-17
 tags: [Website, SEO]
 author: Rumeira
 coverImage: /images/blog/our-process-for-a-website-redesign-that-converts/cover.webp
-coverImageAlt: Rumeira's logo
+coverImageAlt: image of a website redesign process
 featured: true
 ---
 
