@@ -1,0 +1,271 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const featured = allPosts.find((p) => p.data.featured) ?? allPosts[0];
+const rest = allPosts.filter((p) => p.id !== featured?.id);
+
+const allTags = Array.from(new Set(allPosts.flatMap((p) => p.data.tags))).sort();
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog | Rumeira"
+  description="Notes from the build. Essays, breakdowns, and field notes on digital marketing, SEO, AI search, conversion-driven web design, and custom software for growing teams."
+  canonical="https://rumeira.com/blog"
+>
+  <Nav />
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="relative overflow-hidden bg-white pt-32 pb-12 md:pt-40 md:pb-16">
+      <div class="pointer-events-none absolute inset-0 bg-grid-light opacity-60 [mask-image:radial-gradient(ellipse_at_top_right,black_20%,transparent_70%)]"></div>
+      <div class="pointer-events-none absolute -top-32 right-[-10%] h-[560px] w-[560px] rounded-full bg-gold/15 blur-3xl"></div>
+
+      <div class="container-x relative">
+        <div class="grid items-end gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-8">
+            <span class="eyebrow">
+              <span class="h-px w-6 bg-gold"></span>
+              Insights
+            </span>
+            <h1 class="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tightest text-ink sm:text-6xl md:text-7xl">
+              Notes from <span class="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">the build</span>.
+            </h1>
+          </div>
+          <div class="lg:col-span-4">
+            <p class="text-balance text-lg leading-relaxed text-ink/65 md:text-xl">
+              Essays, breakdowns, and field notes on what we ship and what we learn -across search, software, web, and AI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TAG FILTER ========== -->
+    {allTags.length > 0 && (
+      <section class="bg-white pb-8">
+        <div class="container-x">
+          <div class="flex flex-wrap items-center gap-2 border-y border-black/10 py-6" data-tag-bar>
+            <span class="mr-2 text-xs uppercase tracking-[0.2em] text-ink/40">Filter</span>
+            <button type="button" data-tag="__all" class="tag-chip tag-chip-active rounded-full border border-ink bg-ink px-3.5 py-1.5 text-xs font-medium text-white transition-colors">
+              All
+            </button>
+            {allTags.map((t) => (
+              <button type="button" data-tag={t} class="tag-chip rounded-full border border-black/15 bg-white px-3.5 py-1.5 text-xs font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink">
+                {t}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- ========== FEATURED POST ========== -->
+    {featured && (
+      <section class="bg-white pb-12 md:pb-16" data-featured-section data-tags={featured.data.tags.join(',').toLowerCase()}>
+        <div class="container-x">
+          <a href={`/blog/${featured.id}`} class="group block overflow-hidden rounded-3xl border border-black/10 bg-white transition-all duration-300 hover:border-gold/40 hover:shadow-[0_40px_120px_-50px_rgba(152,118,34,0.3)]">
+            <div class="grid lg:grid-cols-12">
+              <div class="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-ink/[0.06] to-ink/[0.02] lg:aspect-auto lg:col-span-7">
+                <img
+                  src={featured.data.coverImage}
+                  alt={featured.data.coverImageAlt ?? featured.data.title}
+                  width="1600"
+                  height="1000"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="eager"
+                />
+                <span class="absolute left-5 top-5 rounded-full bg-gold/95 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur">
+                  Featured
+                </span>
+              </div>
+              <div class="flex flex-col justify-between p-8 md:p-12 lg:col-span-5">
+                <div>
+                  <div class="flex flex-wrap gap-1.5">
+                    {featured.data.tags.map((t) => (
+                      <span class="rounded-full bg-ink/[0.06] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-ink/70">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 class="mt-5 font-display text-3xl font-medium leading-[1.1] tracking-tight text-ink md:text-4xl lg:text-[2.5rem]">
+                    {featured.data.title}
+                  </h2>
+                  <p class="mt-5 text-base leading-relaxed text-ink/65 md:text-lg">
+                    {featured.data.description}
+                  </p>
+                </div>
+                <div class="mt-10 flex items-center justify-between border-t border-black/10 pt-6">
+                  <div class="text-xs text-ink/50">
+                    <span class="font-medium text-ink/70">{featured.data.author}</span>
+                    <span class="mx-2 text-ink/30">·</span>
+                    <span>{fmtDate(featured.data.publishedAt)}</span>
+                  </div>
+                  <span class="inline-flex items-center gap-2 text-sm font-medium text-gold transition-transform group-hover:translate-x-1">
+                    Read post
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    )}
+
+    <!-- ========== POST GRID ========== -->
+    {rest.length > 0 && (
+      <section class="bg-white pb-24 md:pb-32">
+        <div class="container-x">
+          <div class="mb-10 flex items-end justify-between">
+            <h2 class="font-display text-2xl font-medium tracking-tight text-ink md:text-3xl">
+              All posts
+            </h2>
+            <span class="text-xs uppercase tracking-[0.2em] text-ink/40" data-post-count>{rest.length} {rest.length === 1 ? 'post' : 'posts'}</span>
+          </div>
+
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-post-grid>
+            {rest.map((p) => (
+              <a
+                href={`/blog/${p.id}`}
+                data-post-card
+                data-tags={p.data.tags.join(',').toLowerCase()}
+                class="group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white transition-all duration-300 hover:border-gold/40 hover:shadow-[0_30px_80px_-30px_rgba(152,118,34,0.25)]"
+              >
+                <div class="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-ink/[0.06] to-ink/[0.02]">
+                  <img
+                    src={p.data.coverImage}
+                    alt={p.data.coverImageAlt ?? p.data.title}
+                    width="800"
+                    height="500"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="flex flex-1 flex-col p-6">
+                  <div class="flex flex-wrap gap-1.5">
+                    {p.data.tags.map((t) => (
+                      <span class="rounded-full bg-ink/[0.06] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-ink/70">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 class="mt-4 font-display text-xl font-medium leading-tight text-ink md:text-2xl">
+                    {p.data.title}
+                  </h3>
+                  <p class="mt-3 text-sm leading-relaxed text-ink/60">
+                    {p.data.description}
+                  </p>
+                  <div class="mt-6 flex items-center justify-between border-t border-black/10 pt-4 text-xs text-ink/50">
+                    <span>{fmtDate(p.data.publishedAt)}</span>
+                    <span class="inline-flex items-center gap-1.5 font-medium text-gold">
+                      Read
+                      <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div data-empty-state class="hidden mt-12 rounded-2xl border border-dashed border-black/15 bg-[#FBF8EF]/40 p-12 text-center md:p-16">
+            <h3 class="font-display text-xl font-medium text-ink md:text-2xl">No posts in that tag yet.</h3>
+            <p class="mx-auto mt-3 max-w-md text-sm text-ink/60 md:text-base">
+              We're shipping new ones regularly. Switch the filter back to <button type="button" class="font-medium text-gold underline underline-offset-4" data-reset-filter>All</button> to see everything.
+            </p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {allPosts.length === 0 && (
+      <section class="bg-white pb-24 md:pb-32">
+        <div class="container-x">
+          <div class="rounded-2xl border border-dashed border-black/15 bg-[#FBF8EF]/40 p-12 text-center md:p-20">
+            <h3 class="font-display text-2xl font-medium md:text-3xl">First post is on the way.</h3>
+            <p class="mx-auto mt-4 max-w-md text-base text-ink/60 md:text-lg">
+              We're writing. Check back soon.
+            </p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  const tagBar = document.querySelector<HTMLElement>('[data-tag-bar]');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-post-card]'));
+  const featuredSection = document.querySelector<HTMLElement>('[data-featured-section]');
+  const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
+  const countEl = document.querySelector<HTMLElement>('[data-post-count]');
+
+  if (tagBar) {
+    const setActive = (tag: string) => {
+      tagBar.querySelectorAll<HTMLButtonElement>('.tag-chip').forEach((chip) => {
+        const isActive = chip.dataset.tag === tag;
+        chip.classList.toggle('tag-chip-active', isActive);
+        chip.classList.toggle('border-ink', isActive);
+        chip.classList.toggle('bg-ink', isActive);
+        chip.classList.toggle('text-white', isActive);
+        chip.classList.toggle('border-black/15', !isActive);
+        chip.classList.toggle('bg-white', !isActive);
+        chip.classList.toggle('text-ink/70', !isActive);
+      });
+    };
+
+    const filter = (tag: string) => {
+      const normalized = tag.toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const cardTags = (card.dataset.tags ?? '').split(',').filter(Boolean);
+        const matches = tag === '__all' || cardTags.includes(normalized);
+        card.classList.toggle('hidden', !matches);
+        if (matches) visibleCount++;
+      });
+
+      if (featuredSection) {
+        const featuredTags = (featuredSection.dataset.tags ?? '').split(',').filter(Boolean);
+        const matches = tag === '__all' || featuredTags.includes(normalized);
+        featuredSection.classList.toggle('hidden', !matches);
+        if (matches && tag !== '__all') visibleCount++;
+      }
+
+      if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
+      if (countEl) {
+        const total = visibleCount;
+        countEl.textContent = `${total} ${total === 1 ? 'post' : 'posts'}`;
+      }
+    };
+
+    tagBar.querySelectorAll<HTMLButtonElement>('.tag-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const tag = chip.dataset.tag ?? '__all';
+        setActive(tag);
+        filter(tag);
+      });
+    });
+
+    document.querySelector<HTMLButtonElement>('[data-reset-filter]')?.addEventListener('click', () => {
+      setActive('__all');
+      filter('__all');
+    });
+  }
+</script>
