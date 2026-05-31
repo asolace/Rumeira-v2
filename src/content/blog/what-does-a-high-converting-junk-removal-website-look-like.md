@@ -1,12 +1,12 @@
 ---
 title: "What is On-Page SEO?"
 description: "On-page SEO is everything you control on your own site to help it rank. A fast primer with examples and how it differs from off-page SEO."
-publishedAt: 2026-04-17
+publishedAt: 2026-04-01
 tags: [Website, SEO]
 author: Rumeira
 coverImage: /images/blog/what-does-a-high-converting-junk-removal-website-look-like/cover.webp
 coverImageAlt: A simplified webpage diagram with on-page SEO elements highlighted.
-featured: true
+featured: false
 ---
 
 ## High-Converting Website Strategy for Junk Removal Business
