@@ -117,7 +117,8 @@ const canonical = `https://rumeira.com/blog/${post.id}`;
                       <li>
                         <a
                           href={`#${h.slug}`}
-                          class="block -ml-px border-l-2 border-transparent py-1.5 pl-4 text-sm leading-snug text-ink/55 transition-colors hover:border-gold hover:text-ink"
+                          data-toc-link={h.slug}
+                          class="toc-link block -ml-px border-l-2 border-transparent py-1.5 pl-4 text-sm leading-snug text-ink/55 transition-colors hover:border-gold hover:text-ink"
                         >
                           {h.text}
                         </a>
@@ -219,6 +220,10 @@ const canonical = `https://rumeira.com/blog/${post.id}`;
   }
   .prose-rumeira > * + * { margin-top: 1.5rem; }
   html { scroll-behavior: smooth; }
+  .toc-link.toc-active {
+    border-color: rgb(152 118 34);
+    color: rgb(17 17 17);
+  }
   .prose-rumeira h2 {
     font-family: var(--font-display, 'Clash Display', system-ui, sans-serif);
     font-weight: 500;
@@ -310,3 +315,42 @@ const canonical = `https://rumeira.com/blog/${post.id}`;
     margin-top: 0.75rem;
   }
 </style>
+
+<script>
+  const tocLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.toc-link'));
+  const headings = Array.from(document.querySelectorAll<HTMLHeadingElement>('.prose-rumeira h2[id]'));
+
+  if (tocLinks.length > 0 && headings.length > 0) {
+    const linkBySlug = new Map<string, HTMLAnchorElement>();
+    tocLinks.forEach((link) => {
+      const slug = link.dataset.tocLink;
+      if (slug) linkBySlug.set(slug, link);
+    });
+
+    let activeSlug = '';
+    const setActive = (slug: string) => {
+      if (slug === activeSlug) return;
+      const prev = linkBySlug.get(activeSlug);
+      if (prev) prev.classList.remove('toc-active');
+      const next = linkBySlug.get(slug);
+      if (next) next.classList.add('toc-active');
+      activeSlug = slug;
+    };
+
+    const update = () => {
+      const offset = 120;
+      let current = headings[0];
+      for (const h of headings) {
+        if (h.getBoundingClientRect().top - offset <= 0) {
+          current = h;
+        } else {
+          break;
+        }
+      }
+      if (current?.id) setActive(current.id);
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+</script>
